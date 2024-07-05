@@ -52,3 +52,33 @@ if (!function_exists('awv_price')) {
     return $price;
   }
 }
+
+/**
+ * Add custom input fields to the product page
+ * 
+ * @return void
+ */
+if (!function_exists('awv_fields')) {
+  add_action('woocommerce_before_add_to_cart_button', 'awv_fields');
+  function awv_fields() {
+
+    // Sample configuration
+    $config = [
+      [
+        'name' => 'q',
+        'type' => 'text',
+        'placeholder' => 'Sample Placholder'
+      ]
+    ];
+
+    $html = '';
+
+    // Display the input from the configuration
+    foreach($config as $input) {
+      $html .= awv_partial('partials/input', $input['type'], $input);
+    }
+
+    // Wrap the custom input fields in a div for styling purposes
+    echo '<div class="advanced-woocommerce-variations">' . $html . '</div>';
+  }
+}
