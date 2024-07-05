@@ -7,14 +7,34 @@
  */
 
 /**
+ * Inlcude plugin partials
+ * 
+ * @param string $slug
+ * @param string $name
+ * @param array $args
+ * 
+ * @return string
+ */
+if (!function_exists('awv_partial')) {
+  function awv_partial( $slug, $name, $args = [] ) {
+    ob_start();
+      require plugin_dir_path( __DIR__ ) . $slug . $name . '.php';
+      $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+  }
+}
+
+/**
  * Modify the price based on the initial values of the advanced variations
  *
  * @param string $price
+ * 
  * @return string
  */
-if (!function_exists('awv_price_filter')) {
-  add_filter('woocommerce_get_price_html', 'awv_price_filter', 10, 1);
-  function awv_price_filter($price) {
+if (!function_exists('awv_price')) {
+  add_filter('woocommerce_get_price_html', 'awv_price', 10, 1);
+  function awv_price($price) {
 
     // Check if the price string contains the class 'amount'
     preg_match_all('/\b amount\b/', $price, $amount);
