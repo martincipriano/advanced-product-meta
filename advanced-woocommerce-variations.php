@@ -18,7 +18,7 @@
 if (!function_exists('awv_partial')) {
   function awv_partial( $slug, $name, $args = [] ) {
     ob_start();
-      require plugin_dir_path( __DIR__ ) . $slug . $name . '.php';
+      require plugin_dir_path(__FILE__) . $slug . '-' . $name . '.php';
       $content = ob_get_contents();
     ob_end_clean();
     return $content;
