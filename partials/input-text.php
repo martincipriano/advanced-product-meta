@@ -1,1 +1,1 @@
-<input placeholder="Test Input" name="q" type="text">
+<input placeholder="<?= $args['placeholder'] ?>" name="<?= $args['name'] ?>" type="<?= $args['type'] ?>">
