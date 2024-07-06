@@ -65,8 +65,30 @@ if (!function_exists('awv_fields')) {
     // Sample configuration
     $config = [
       [
-        'name' => 'q',
-        'type' => 'text',
+        'name' => 'test',
+        'placeholder' => 'Sample Placholder',
+        'type' => 'text'
+      ],
+      [
+        'name' => 'test1',
+        'type' => 'select',
+        'options' => [
+          [
+            'value' => '1',
+            'label' => 'Option 1',
+            'price' => 10
+          ],
+          [
+            'value' => '2',
+            'label' => 'Option 2',
+            'price' => 10
+          ],
+          [
+            'value' => '3',
+            'label' => 'Option 3',
+            'price' => 10
+          ]
+        ],
         'placeholder' => 'Sample Placholder'
       ]
     ];
