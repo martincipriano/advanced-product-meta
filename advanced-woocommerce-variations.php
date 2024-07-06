@@ -65,12 +65,14 @@ if (!function_exists('awv_fields')) {
     // Sample configuration
     $config = [
       [
+        'id' => 'test',
         'label' => 'Test Text Field',
         'name' => 'test',
         'placeholder' => 'Sample Placholder',
         'type' => 'text'
       ],
       [
+        'id' => 'test1',
         'label' => 'Test Select Field',
         'name' => 'test1',
         'type' => 'select',
