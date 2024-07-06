@@ -3,6 +3,6 @@
     <option selected disabled value=""><?= $args['placeholder'] ?></option>
   <?php endif; ?>
   <?php foreach ($args['options'] as $option): ?>
-    <option value="<?= $option['value'] ?>"><?= $option['label'] ?> &mdash; <?= $option['price'] ?></option>
+    <option value="<?= $option['value'] ?>"><?= $option['label'] ?> &mdash; <?= wc_price($option['price']) ?></option>
   <?php endforeach; ?>
 </select>
