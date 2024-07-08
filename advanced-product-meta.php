@@ -6,6 +6,8 @@
  * Version 0.0.1
  */
 
+include_once 'helpers.php';
+
 $apm_config = [
   [
     'class' => 'test',
@@ -13,6 +15,12 @@ $apm_config = [
     'label' => 'Test Text Field',
     'name' => 'test',
     'placeholder' => 'Sample Placholder',
+    'price' => [
+      [
+        'value' => 'test',
+        'price' => 10
+      ]
+    ],
     'type' => 'text'
   ],
   [
@@ -20,46 +28,38 @@ $apm_config = [
     'id' => 'test1',
     'label' => 'Test Select Field',
     'name' => 'test1',
-    'type' => 'select',
     'options' => [
       [
         'value' => '1',
         'label' => 'Option 1',
-        'price' => 10
       ],
       [
         'value' => '2',
         'label' => 'Option 2',
-        'price' => 10
       ],
       [
         'value' => '3',
         'label' => 'Option 3',
-        'price' => 10
       ]
     ],
-    'placeholder' => 'Sample Placholder'
+    'price' => [
+      [
+        'value' => '1',
+        'price' => 10
+      ],
+      [
+        'value' => '2',
+        'price' => 20
+      ],
+      [
+        'value' => '3',
+        'price' => 30
+      ]
+    ],
+    'placeholder' => 'Sample Placholder',
+    'type' => 'select'
   ]
 ];
-
-/**
- * Inlcude plugin partials
- * 
- * @param string $slug
- * @param string $name
- * @param array $args
- * 
- * @return string
- */
-if (!function_exists('apm_partial')) {
-  function apm_partial( $slug, $name, $args = [] ) {
-    ob_start();
-      require plugin_dir_path(__FILE__) . $slug . '-' . $name . '.php';
-      $content = ob_get_contents();
-    ob_end_clean();
-    return $content;
-  }
-}
 
 /**
  * Modify the price based on the initial values of the advanced variations
