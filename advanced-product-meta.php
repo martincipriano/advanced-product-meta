@@ -96,6 +96,19 @@ $apm_config = [
   ]
 ];
 
+if (!function_exists('apm_enqueue_scripts')) {
+  add_action('wp_enqueue_scripts', 'apm_enqueue_scripts');
+  function apm_enqueue_scripts() {
+    global $apm_config;
+
+    // Only load the styles and scripts if on the product page if there's a configuration
+    if ($apm_config) {
+      wp_enqueue_style('apm-styles', plugin_dir_url(__FILE__) . 'css/advanced-product-meta.css');
+      wp_enqueue_script('apm-scripts', plugin_dir_url(__FILE__) . 'js/advanced-product-meta.js', [], filemtime(plugin_dir_path(__FILE__) . 'js/advanced-product-meta.js'), true);
+    }
+  }
+}
+
 /**
  * Modify the price based on the initial values of the advanced variations
  *
