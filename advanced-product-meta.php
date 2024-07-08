@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Advanced Product Meta
- * Description: Create advanced variations for WooCommerce.
+ * Description: Create an advanced metadata for WooCommerce products.
  * Author: WPBuoy
  * Version 0.0.1
  */
