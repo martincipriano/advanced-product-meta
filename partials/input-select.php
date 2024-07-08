@@ -4,8 +4,8 @@
     <?php if ($args['placeholder']): ?>
       <option selected disabled value=""><?= $args['placeholder'] ?></option>
     <?php endif; ?>
-    <?php foreach ($args['options'] as $option): ?>
-      <option value="<?= $option['value'] ?>"><?= $option['label'] ?> &mdash; <?= wc_price($option['price']) ?></option>
+    <?php foreach ($args['options'] as $key => $option): ?>
+      <option value="<?= $option['value'] ?>"><?= $option['label'] ?> &mdash; <?= wc_price(apm_get_price($args['price'], $option['value'])) ?></option>
     <?php endforeach; ?>
   </select>
 </div>
