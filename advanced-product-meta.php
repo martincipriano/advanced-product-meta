@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Advanced WooCommerce Variations
+ * Plugin Name: Advanced Product Meta
  * Description: Create advanced variations for WooCommerce.
  * Author: WPBuoy
  * Version 0.0.1
@@ -15,8 +15,8 @@
  * 
  * @return string
  */
-if (!function_exists('awv_partial')) {
-  function awv_partial( $slug, $name, $args = [] ) {
+if (!function_exists('apm_partial')) {
+  function apm_partial( $slug, $name, $args = [] ) {
     ob_start();
       require plugin_dir_path(__FILE__) . $slug . '-' . $name . '.php';
       $content = ob_get_contents();
@@ -32,9 +32,9 @@ if (!function_exists('awv_partial')) {
  * 
  * @return string
  */
-if (!function_exists('awv_price')) {
-  add_filter('woocommerce_get_price_html', 'awv_price', 10, 1);
-  function awv_price($price) {
+if (!function_exists('apm_price')) {
+  add_filter('woocommerce_get_price_html', 'apm_price', 10, 1);
+  function apm_price($price) {
 
     // Check if the price string contains the class 'amount'
     preg_match_all('/\b amount\b/', $price, $amount);
@@ -58,9 +58,9 @@ if (!function_exists('awv_price')) {
  * 
  * @return void
  */
-if (!function_exists('awv_fields')) {
-  add_action('woocommerce_before_add_to_cart_button', 'awv_fields');
-  function awv_fields() {
+if (!function_exists('apm_fields')) {
+  add_action('woocommerce_before_add_to_cart_button', 'apm_fields');
+  function apm_fields() {
 
     // Sample configuration
     $config = [
@@ -101,7 +101,7 @@ if (!function_exists('awv_fields')) {
 
     // Display the input from the configuration
     foreach($config as $input) {
-      $html .= awv_partial('partials/input', $input['type'], $input);
+      $html .= apm_partial('partials/input', $input['type'], $input);
     }
 
     // Wrap the custom input fields in a div for styling purposes
