@@ -58,6 +58,41 @@ $apm_config = [
     ],
     'placeholder' => 'Sample Placholder',
     'type' => 'select'
+  ],
+  [
+    'class' => 'test2',
+    'id' => 'test2',
+    'label' => 'Select One',
+    'name' => 'test2',
+    'options' => [
+      [
+        'value' => '1',
+        'label' => 'Option 1',
+      ],
+      [
+        'value' => '2',
+        'label' => 'Option 2',
+      ],
+      [
+        'value' => '3',
+        'label' => 'Option 3',
+      ]
+    ],
+    'price' => [
+      [
+        'value' => '1',
+        'price' => 10
+      ],
+      [
+        'value' => '2',
+        'price' => 20
+      ],
+      [
+        'value' => '3',
+        'price' => 30
+      ]
+    ],
+    'type' => 'radio'
   ]
 ];
 
