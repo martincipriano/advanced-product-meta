@@ -6,6 +6,42 @@
  * Version 0.0.1
  */
 
+$apm_config = [
+  [
+    'class' => 'test',
+    'id' => 'test',
+    'label' => 'Test Text Field',
+    'name' => 'test',
+    'placeholder' => 'Sample Placholder',
+    'type' => 'text'
+  ],
+  [
+    'class' => 'test1',
+    'id' => 'test1',
+    'label' => 'Test Select Field',
+    'name' => 'test1',
+    'type' => 'select',
+    'options' => [
+      [
+        'value' => '1',
+        'label' => 'Option 1',
+        'price' => 10
+      ],
+      [
+        'value' => '2',
+        'label' => 'Option 2',
+        'price' => 10
+      ],
+      [
+        'value' => '3',
+        'label' => 'Option 3',
+        'price' => 10
+      ]
+    ],
+    'placeholder' => 'Sample Placholder'
+  ]
+];
+
 /**
  * Inlcude plugin partials
  * 
@@ -61,48 +97,11 @@ if (!function_exists('apm_price')) {
 if (!function_exists('apm_fields')) {
   add_action('woocommerce_before_add_to_cart_button', 'apm_fields');
   function apm_fields() {
-
-    // Sample configuration
-    $config = [
-      [
-        'class' => 'test',
-        'id' => 'test',
-        'label' => 'Test Text Field',
-        'name' => 'test',
-        'placeholder' => 'Sample Placholder',
-        'type' => 'text'
-      ],
-      [
-        'class' => 'test1',
-        'id' => 'test1',
-        'label' => 'Test Select Field',
-        'name' => 'test1',
-        'type' => 'select',
-        'options' => [
-          [
-            'value' => '1',
-            'label' => 'Option 1',
-            'price' => 10
-          ],
-          [
-            'value' => '2',
-            'label' => 'Option 2',
-            'price' => 10
-          ],
-          [
-            'value' => '3',
-            'label' => 'Option 3',
-            'price' => 10
-          ]
-        ],
-        'placeholder' => 'Sample Placholder'
-      ]
-    ];
-
+    global $apm_config;
     $html = '';
 
     // Display the input from the configuration
-    foreach($config as $input) {
+    foreach($apm_config as $input) {
       $html .= apm_partial('partials/input', $input['type'], $input);
     }
 
@@ -114,6 +113,7 @@ if (!function_exists('apm_fields')) {
 if (!function_exists('apm_validate_fields')) {
   add_action('woocommerce_add_to_cart_validation', 'apm_validate_fields', 10, 3);
   function apm_validate_fields($passed, $product_id, $quantity) {
+    global $apm_config;
 
     if (!isset($_POST['test']) || (isset($_POST['test']) && !$_POST['test'])) {
       wc_add_notice('Please enter a value for the test field.', 'error');
