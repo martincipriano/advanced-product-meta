@@ -65,6 +65,7 @@ if (!function_exists('apm_fields')) {
     // Sample configuration
     $config = [
       [
+        'class' => 'test',
         'id' => 'test',
         'label' => 'Test Text Field',
         'name' => 'test',
@@ -72,6 +73,7 @@ if (!function_exists('apm_fields')) {
         'type' => 'text'
       ],
       [
+        'class' => 'test1',
         'id' => 'test1',
         'label' => 'Test Select Field',
         'name' => 'test1',
@@ -106,5 +108,23 @@ if (!function_exists('apm_fields')) {
 
     // Wrap the custom input fields in a div for styling purposes
     echo '<div class="advanced-woocommerce-variations">' . $html . '</div>';
+  }
+}
+
+if (!function_exists('apm_validate_fields')) {
+  add_action('woocommerce_add_to_cart_validation', 'apm_validate_fields', 10, 3);
+  function apm_validate_fields($passed, $product_id, $quantity) {
+
+    if (!isset($_POST['test']) || (isset($_POST['test']) && !$_POST['test'])) {
+      wc_add_notice('Please enter a value for the test field.', 'error');
+      $passed = false;
+    }
+
+    if (!isset($_POST['test1']) || (isset($_POST['test1']) && !$_POST['test1'])) {
+      wc_add_notice('Please select a value for the test1 field.', 'error');
+      $passed = false;
+    }
+
+    return $passed;
   }
 }
