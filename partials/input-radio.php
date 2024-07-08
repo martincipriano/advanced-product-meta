@@ -1,4 +1,4 @@
-<div class="awv-form-group">
+<div class="apm-form-group">
   <label><?= $args['label'] ?></label>
   <div class="apm-radio-group">
     <?php foreach ($args['options'] as $option): ?>

@@ -1,4 +1,4 @@
-<div class="awv-form-group">
+<div class="apm-form-group">
   <label for="<?= $args['id'] ?>"><?= $args['label'] ?></label>
   <select class="<?= $args['class'] ?>" name="<?= $args['name'] ?>" id="<?= $args['id'] ?>">
     <?php if ($args['placeholder']): ?>

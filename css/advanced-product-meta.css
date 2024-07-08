@@ -1,5 +1,7 @@
 .advanced-product-meta label {
+  all: unset !important;
   display: block;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=advanced-product-meta.css.map */

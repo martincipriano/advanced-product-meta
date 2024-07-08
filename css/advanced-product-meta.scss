@@ -1,5 +1,6 @@
 .advanced-product-meta {
-  label {
-    display: block
+  > label {
+    display: block;
+    font-size: 1rem;
   }
 }
