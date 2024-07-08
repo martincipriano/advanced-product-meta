@@ -110,6 +110,15 @@ if (!function_exists('apm_fields')) {
   }
 }
 
+/**
+ * Validate the custom input fields
+ *
+ * @param bool $passed
+ * @param int $product_id
+ * @param int $quantity
+ *
+ * @return bool
+ */
 if (!function_exists('apm_validate_fields')) {
   add_action('woocommerce_add_to_cart_validation', 'apm_validate_fields', 10, 3);
   function apm_validate_fields($passed, $product_id, $quantity) {
