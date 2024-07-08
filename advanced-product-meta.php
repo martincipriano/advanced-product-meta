@@ -154,7 +154,7 @@ if (!function_exists('apm_fields')) {
     }
 
     // Wrap the custom input fields in a div for styling purposes
-    echo '<div class="advanced-woocommerce-variations">' . $html . '</div>';
+    echo '<div class="advanced-product-meta">' . $html . '</div>';
   }
 }
 
