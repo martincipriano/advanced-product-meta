@@ -201,17 +201,27 @@ if (!function_exists('apm_price')) {
 if (!function_exists('apm_fields')) {
   add_action('woocommerce_before_add_to_cart_button', 'apm_fields');
   function apm_fields() {
+
     global $apm_config;
+
     $html = '';
 
     // Display the input from the configuration
     foreach($apm_config as $input) {
       $html .= apm_partial('partials/input', $input['type'], $input);
-    }
+    } ?>
 
-    // Wrap the custom input fields in a div for styling purposes
-    echo '<div id="advanced-product-meta">' . $html . '</div>';
-  }
+    <div id="advanced-product-meta">
+      <?php
+        do_action('before_apm_fields', $apm_config);
+
+        echo $html;
+
+        do_action('after_apm_fields', $apm_config);
+      ?>
+    </div>
+
+  <?php }
 }
 
 /**
