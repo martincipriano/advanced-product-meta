@@ -1,5 +1,15 @@
 <div class="apm-form-group">
-  <label><?= $args['label'] ?></label>
+
+  <?php if($args['label']): ?>
+    <label><?= $args['label'] ?></label>
+  <?php endif; ?>
+
+  <?php if($args['description']): ?>
+    <p class="description"><?= $args['description'] ?></p>
+  <?php endif; ?>
+
+  <?php do_action('before_apm_input', $args) ?>
+
   <div class="apm-radio-group">
     <?php foreach ($args['options'] as $option): ?>
       <div class="apm-radio">
@@ -8,4 +18,6 @@
       </div>
     <?php endforeach; ?>
   </div>
+
+  <?php do_action('after_apm_input', $args) ?>
 </div>

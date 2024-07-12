@@ -1,7 +1,33 @@
-.advanced-product-meta label {
-  all: unset !important;
+#advanced-product-meta {
+  user-select: none;
+}
+#advanced-product-meta .apm-form-group {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+#advanced-product-meta .apm-form-group > label {
   display: block;
   font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+#advanced-product-meta .apm-form-group > label + p {
+  margin-bottom: 0.5rem;
+}
+#advanced-product-meta .apm-form-group > input[type=text],
+#advanced-product-meta .apm-form-group > input[type=number],
+#advanced-product-meta .apm-form-group > select {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+#advanced-product-meta .apm-form-group input[type=radio] {
+  cursor: pointer;
+}
+#advanced-product-meta .apm-form-group input[type=radio] + label {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=advanced-product-meta.css.map */

@@ -24,6 +24,22 @@ $apm_config = [
     'type' => 'text'
   ],
   [
+    'class' => 'test-number',
+    'id' => 'test-number',
+    'label' => 'Test Number Field',
+    'max' => '10',
+    'min' => '0',
+    'name' => 'test-number',
+    'placeholder' => 'Sample Placholder',
+    'price' => [
+      [
+        'value' => 'test',
+        'price' => 10
+      ]
+    ],
+    'type' => 'number'
+  ],
+  [
     'class' => 'test1',
     'id' => 'test1',
     'label' => 'Test Select Field',
@@ -93,6 +109,41 @@ $apm_config = [
       ]
     ],
     'type' => 'radio'
+  ],
+  [
+    'class' => 'test3',
+    'id' => 'test3',
+    'label' => 'Select One',
+    'name' => 'test3',
+    'options' => [
+      [
+        'value' => '1',
+        'label' => 'Option 1',
+      ],
+      [
+        'value' => '2',
+        'label' => 'Option 2',
+      ],
+      [
+        'value' => '3',
+        'label' => 'Option 3',
+      ]
+    ],
+    'price' => [
+      [
+        'value' => '1',
+        'price' => 10
+      ],
+      [
+        'value' => '2',
+        'price' => 20
+      ],
+      [
+        'value' => '3',
+        'price' => 30
+      ]
+    ],
+    'type' => 'checkbox'
   ]
 ];
 
@@ -154,7 +205,7 @@ if (!function_exists('apm_fields')) {
     }
 
     // Wrap the custom input fields in a div for styling purposes
-    echo '<div class="advanced-product-meta">' . $html . '</div>';
+    echo '<div id="advanced-product-meta">' . $html . '</div>';
   }
 }
 
