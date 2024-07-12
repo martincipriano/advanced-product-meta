@@ -23,7 +23,7 @@ $apm_config = [
     'id' => 'test',
     'label' => 'Test Text Field',
     'name' => 'test',
-    'placeholder' => 'Sample Placholder',
+    'placeholder' => 'Sample Placeholder',
     'price' => [
       [
         'value' => 'test',
@@ -43,7 +43,7 @@ $apm_config = [
     'max' => '10',
     'min' => '0',
     'name' => 'test-number',
-    'placeholder' => 'Sample Placholder',
+    'placeholder' => 'Sample Placeholder',
     'price' => [
       [
         'value' => 'test',
@@ -89,7 +89,7 @@ $apm_config = [
         'price' => 30
       ]
     ],
-    'placeholder' => 'Sample Placholder',
+    'placeholder' => 'Sample Placeholder',
     'required' => false,
     'type' => 'select'
   ],

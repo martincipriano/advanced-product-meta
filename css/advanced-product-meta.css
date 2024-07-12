@@ -17,11 +17,25 @@
 #advanced-product-meta .apm-form-group > input[type=text],
 #advanced-product-meta .apm-form-group > input[type=number],
 #advanced-product-meta .apm-form-group > select {
-  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 231, 235);
   border-radius: 0;
+  box-sizing: border-box;
+  height: 3rem;
   margin: 0;
-  padding: 0.75rem 1rem;
+  padding: 0 1rem;
   width: 100%;
+}
+#advanced-product-meta .apm-form-group > input[type=text]::placeholder,
+#advanced-product-meta .apm-form-group > input[type=number]::placeholder,
+#advanced-product-meta .apm-form-group > select::placeholder {
+  color: rgb(156, 163, 175);
+  font-size: 1rem;
+}
+#advanced-product-meta .apm-form-group > input[type=text] option:not(:first-of-type),
+#advanced-product-meta .apm-form-group > input[type=number] option:not(:first-of-type),
+#advanced-product-meta .apm-form-group > select option:not(:first-of-type) {
+  color: rgb(156, 163, 175);
 }
 #advanced-product-meta .apm-form-group input[type=radio],
 #advanced-product-meta .apm-form-group input[type=checkbox] {

@@ -1,3 +1,7 @@
+$white:rgb(255 255 255);
+$light-gray:rgb(229 231 235);
+$medium-gray:rgb(156 163 175);
+
 #advanced-product-meta {
   user-select: none;
     
@@ -19,11 +23,23 @@
     > input[type="text"],
     > input[type="number"],
     > select {
-      border: 1px solid #ccc;
+      background-color: $white;
+      border: 1px solid $light-gray;
       border-radius: 0;
+      box-sizing: border-box;
+      height: 3rem;
       margin: 0;
-      padding: .75rem 1rem;
+      padding: 0 1rem;
       width: 100%;
+
+      &::placeholder {
+        color: $medium-gray;
+        font-size: 1rem;
+      }
+
+      option:not(:first-of-type) {
+        color: $medium-gray;
+      }
     }
 
     input[type="radio"],
