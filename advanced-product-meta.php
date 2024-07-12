@@ -11,6 +11,7 @@ include_once 'helpers.php';
 $apm_config = [
   [
     'class' => 'test',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'id' => 'test',
     'label' => 'Test Text Field',
     'name' => 'test',
@@ -25,6 +26,7 @@ $apm_config = [
   ],
   [
     'class' => 'test-number',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'id' => 'test-number',
     'label' => 'Test Number Field',
     'max' => '10',
@@ -41,6 +43,7 @@ $apm_config = [
   ],
   [
     'class' => 'test1',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'id' => 'test1',
     'label' => 'Test Select Field',
     'name' => 'test1',
@@ -77,6 +80,7 @@ $apm_config = [
   ],
   [
     'class' => 'test2',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'id' => 'test2',
     'label' => 'Select One',
     'name' => 'test2',
@@ -112,6 +116,7 @@ $apm_config = [
   ],
   [
     'class' => 'test3',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'id' => 'test3',
     'label' => 'Select One',
     'name' => 'test3',

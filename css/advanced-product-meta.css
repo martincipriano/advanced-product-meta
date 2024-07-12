@@ -23,10 +23,12 @@
   padding: 0.75rem 1rem;
   width: 100%;
 }
-#advanced-product-meta .apm-form-group input[type=radio] {
+#advanced-product-meta .apm-form-group input[type=radio],
+#advanced-product-meta .apm-form-group input[type=checkbox] {
   cursor: pointer;
 }
-#advanced-product-meta .apm-form-group input[type=radio] + label {
+#advanced-product-meta .apm-form-group input[type=radio] + label,
+#advanced-product-meta .apm-form-group input[type=checkbox] + label {
   cursor: pointer;
 }
 
