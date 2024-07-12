@@ -1,4 +1,4 @@
-<div class="apm-form-group">
+<div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
   <?php if($args['label']): ?>
     <label for="<?= $args['id'] ?>"><?= $args['label'] ?></label>
@@ -11,11 +11,10 @@
   <?php do_action('before_apm_input', $args) ?>
 
   <input
-    id="<?= $args['id'] ?>"
     name="<?= $args['name'] ?>"
     placeholder="<?= $args['placeholder'] ?>"
     type="<?= $args['type'] ?>"
-    value="<?= $_POST[$args['name']] ?? $args['value'] ?>"
+    value="<?= $_POST[$args['name']] ?? ($args['value'] ?? '') ?>"
   >
 
   <?php do_action('after_apm_input', $args) ?>

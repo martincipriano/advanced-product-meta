@@ -1,4 +1,4 @@
-<div class="apm-form-group">
+<div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
   <?php if($args['label']): ?>
     <label for="<?= $args['id'] ?>"><?= $args['label'] ?></label>
@@ -10,7 +10,7 @@
 
   <?php do_action('before_apm_input', $args) ?>
 
-  <select class="<?= $args['class'] ?>" name="<?= $args['name'] ?>" id="<?= $args['id'] ?>">
+  <select name="<?= $args['name'] ?>">
     <?php if ($args['placeholder']): ?>
       <option selected disabled value=""><?= $args['placeholder'] ?></option>
     <?php endif; ?>

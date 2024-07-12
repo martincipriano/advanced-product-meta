@@ -1,4 +1,4 @@
-<div class="apm-form-group">
+<div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
   <?php if($args['label']): ?>
     <label><?= $args['label'] ?></label>
