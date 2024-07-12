@@ -11,7 +11,15 @@ include_once 'helpers.php';
 $apm_config = [
   [
     'class' => 'test',
+    'condition' => [
+      [
+        'action' => 'show',
+        'operator' => '==',
+        'value' => 'test1',
+      ]
+    ],
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'hidden' => true,
     'id' => 'test',
     'label' => 'Test Text Field',
     'name' => 'test',
@@ -22,11 +30,14 @@ $apm_config = [
         'price' => 10
       ]
     ],
-    'type' => 'text'
+    'required' => true,
+    'type' => 'text',
+    'value' => ''
   ],
   [
     'class' => 'test-number',
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'hidden' => false,
     'id' => 'test-number',
     'label' => 'Test Number Field',
     'max' => '10',
@@ -39,11 +50,13 @@ $apm_config = [
         'price' => 10
       ]
     ],
+    'required' => true,
     'type' => 'number'
   ],
   [
     'class' => 'test1',
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'hidden' => false,
     'id' => 'test1',
     'label' => 'Test Select Field',
     'name' => 'test1',
@@ -76,11 +89,13 @@ $apm_config = [
       ]
     ],
     'placeholder' => 'Sample Placholder',
+    'required' => false,
     'type' => 'select'
   ],
   [
     'class' => 'test2',
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'hidden' => false,
     'id' => 'test2',
     'label' => 'Select One',
     'name' => 'test2',
@@ -112,11 +127,13 @@ $apm_config = [
         'price' => 30
       ]
     ],
+    'required' => true,
     'type' => 'radio'
   ],
   [
     'class' => 'test3',
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'hidden' => false,
     'id' => 'test3',
     'label' => 'Select One',
     'name' => 'test3',
@@ -148,6 +165,7 @@ $apm_config = [
         'price' => 30
       ]
     ],
+    'required' => false,
     'type' => 'checkbox'
   ]
 ];
@@ -237,17 +255,18 @@ if (!function_exists('apm_validate_fields')) {
   add_action('woocommerce_add_to_cart_validation', 'apm_validate_fields', 10, 3);
   function apm_validate_fields($passed, $product_id, $quantity) {
     global $apm_config;
+    foreach($apm_config as $input) {
 
-    if (!isset($_POST['test']) || (isset($_POST['test']) && !$_POST['test'])) {
-      wc_add_notice('Please enter a value for the test field.', 'error');
-      $passed = false;
+      // Check if the input is required
+      if ($input['required']) {
+
+        // Check if the input is set and if it has a value
+        if(!isset($_POST[$input['name']]) || (isset($_POST[$input['name']]) && !$_POST[$input['name']])) {
+          wc_add_notice($input['label'] . ' is required.' , 'error');
+          $passed = false;
+        }
+      }
     }
-
-    if (!isset($_POST['test1']) || (isset($_POST['test1']) && !$_POST['test1'])) {
-      wc_add_notice('Please select a value for the test1 field.', 'error');
-      $passed = false;
-    }
-
     return $passed;
   }
 }
