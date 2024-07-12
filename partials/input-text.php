@@ -10,7 +10,13 @@
 
   <?php do_action('before_apm_input', $args) ?>
 
-  <input id="<?= $args['id'] ?>" name="<?= $args['name'] ?>" placeholder="<?= $args['placeholder'] ?>" type="<?= $args['type'] ?>">
+  <input
+    id="<?= $args['id'] ?>"
+    name="<?= $args['name'] ?>"
+    placeholder="<?= $args['placeholder'] ?>"
+    type="<?= $args['type'] ?>"
+    value="<?= $_POST[$args['name']] ?? $args['value'] ?>"
+  >
 
   <?php do_action('after_apm_input', $args) ?>
 </div>
