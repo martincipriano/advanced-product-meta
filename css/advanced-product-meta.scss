@@ -44,6 +44,14 @@ $dark-gray:rgb(107 114 128);
       }
     }
 
+    select {
+      appearance: none;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9"><path fill="%236b7280" fill-rule="nonzero" d="m13.322.265 1.356 1.47L7.5 8.361.322 1.735 1.678.265 7.5 5.639z"/></svg>');
+      background-position: right 1rem center;
+      background-repeat: no-repeat;
+      padding-right: 3rem;
+    }
+
     input[type="radio"],
     input[type="checkbox"] {
       cursor: pointer;
