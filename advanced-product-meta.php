@@ -36,7 +36,7 @@ $apm_config = [
   ],
   [
     'class' => 'test-number',
-    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'description' => '',
     'hidden' => false,
     'id' => 'test-number',
     'label' => 'Test Number Field',
@@ -56,7 +56,7 @@ $apm_config = [
   ],
   [
     'class' => 'test1',
-    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'description' => '',
     'hidden' => false,
     'id' => 'test1',
     'label' => 'Test Select Field',
@@ -95,7 +95,7 @@ $apm_config = [
   ],
   [
     'class' => 'test2',
-    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'description' => '',
     'hidden' => false,
     'id' => 'test2',
     'label' => 'Select One',
@@ -133,7 +133,7 @@ $apm_config = [
   ],
   [
     'class' => 'test3',
-    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
+    'description' => '',
     'hidden' => false,
     'id' => 'test3',
     'label' => 'Select One',

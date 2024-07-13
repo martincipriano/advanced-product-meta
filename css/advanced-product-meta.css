@@ -3,38 +3,38 @@
 }
 #advanced-product-meta .apm-form-group {
   font-size: 1rem;
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
 }
 #advanced-product-meta .apm-form-group > label {
   display: block;
-  font-size: 1rem;
   font-weight: bold;
   margin: 0 0 0.5rem;
 }
 #advanced-product-meta .apm-form-group > label + p {
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
 }
-#advanced-product-meta .apm-form-group > input[type=text],
-#advanced-product-meta .apm-form-group > input[type=number],
-#advanced-product-meta .apm-form-group > select {
+#advanced-product-meta .apm-form-group input[type=text],
+#advanced-product-meta .apm-form-group input[type=number],
+#advanced-product-meta .apm-form-group select {
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(229, 231, 235);
+  border: 1px solid rgb(107, 114, 128);
   border-radius: 0;
   box-sizing: border-box;
+  font-size: 1rem;
   height: 3rem;
   margin: 0;
   padding: 0 1rem;
   width: 100%;
 }
-#advanced-product-meta .apm-form-group > input[type=text]::placeholder,
-#advanced-product-meta .apm-form-group > input[type=number]::placeholder,
-#advanced-product-meta .apm-form-group > select::placeholder {
+#advanced-product-meta .apm-form-group input[type=text]::placeholder,
+#advanced-product-meta .apm-form-group input[type=number]::placeholder,
+#advanced-product-meta .apm-form-group select::placeholder {
   color: rgb(156, 163, 175);
   font-size: 1rem;
 }
-#advanced-product-meta .apm-form-group > input[type=text] option:not(:first-of-type),
-#advanced-product-meta .apm-form-group > input[type=number] option:not(:first-of-type),
-#advanced-product-meta .apm-form-group > select option:not(:first-of-type) {
+#advanced-product-meta .apm-form-group input[type=text] option:not(:first-of-type),
+#advanced-product-meta .apm-form-group input[type=number] option:not(:first-of-type),
+#advanced-product-meta .apm-form-group select option:not(:first-of-type) {
   color: rgb(156, 163, 175);
 }
 #advanced-product-meta .apm-form-group input[type=radio],
@@ -44,6 +44,83 @@
 #advanced-product-meta .apm-form-group input[type=radio] + label,
 #advanced-product-meta .apm-form-group input[type=checkbox] + label {
   cursor: pointer;
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+}
+#advanced-product-meta .apm-radio {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+}
+#advanced-product-meta .apm-radio input[type=radio] {
+  appearance: none;
+  border: 2px solid rgb(107, 114, 128);
+  border-radius: 20px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 24px;
+}
+#advanced-product-meta .apm-radio input[type=radio]::after {
+  background-color: rgb(107, 114, 128);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 0.15s;
+  width: 14px;
+}
+#advanced-product-meta .apm-radio input[type=radio]:checked::after {
+  height: 14px;
+}
+#advanced-product-meta .apm-checkbox {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+}
+#advanced-product-meta .apm-checkbox input[type=checkbox] {
+  appearance: none;
+  border: 2px solid rgb(107, 114, 128);
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 24px;
+}
+#advanced-product-meta .apm-checkbox input[type=checkbox]::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23FFFFFF" fill-rule="nonzero" d="m10.278 0 1.665 1.108-6.665 10.017L0 7.372l1.159-1.63L4.756 8.3z"/></svg>');
+  background-position: center;
+  background-size: 100%;
+  content: "";
+  display: block;
+  height: 14px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  z-index: 1;
+}
+#advanced-product-meta .apm-checkbox input[type=checkbox]::after {
+  background-color: rgb(107, 114, 128);
+  content: "";
+  display: block;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 0.15s;
+  width: 100%;
+  z-index: 0;
+}
+#advanced-product-meta .apm-checkbox input[type=checkbox]:checked::after {
+  height: 100%;
 }
 
 /*# sourceMappingURL=advanced-product-meta.css.map */

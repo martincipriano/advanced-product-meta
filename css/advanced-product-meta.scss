@@ -1,32 +1,34 @@
+$black: rgb(0 0 0);
 $white:rgb(255 255 255);
 $light-gray:rgb(229 231 235);
 $medium-gray:rgb(156 163 175);
+$dark-gray:rgb(107 114 128);
 
 #advanced-product-meta {
   user-select: none;
     
   .apm-form-group {
     font-size: 1rem;
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
 
     > label {
       display: block;
-      font-size: 1rem;
       font-weight: bold;
       margin: 0 0 .5rem;
 
       & + p {
-        margin-bottom: .5rem;
+        margin: 0 0 .5rem;
       }
     }
 
-    > input[type="text"],
-    > input[type="number"],
-    > select {
+    input[type="text"],
+    input[type="number"],
+    select {
       background-color: $white;
-      border: 1px solid $light-gray;
+      border: 1px solid $dark-gray;
       border-radius: 0;
       box-sizing: border-box;
+      font-size: 1rem;
       height: 3rem;
       margin: 0;
       padding: 0 1rem;
@@ -47,6 +49,96 @@ $medium-gray:rgb(156 163 175);
       cursor: pointer;
       & + label {
         cursor: pointer;
+        margin: 0;
+        padding: 0 0 0 .5rem;
+      }
+    }
+  }
+
+  .apm-radio {
+    align-items: center;
+    display: flex;
+    margin-bottom: 1rem;
+
+    input[type="radio"] {
+      appearance: none;
+      border: 2px solid $dark-gray;
+      border-radius: 20px;
+      height: 24px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 24px;
+
+      &::after {
+        background-color: $dark-gray;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        height: 0;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: height .15s;
+        width: 14px;
+      }
+
+      &:checked {
+        &::after {
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .apm-checkbox {
+    align-items: center;
+    display: flex;
+    margin-bottom: 1rem;
+
+    input[type="checkbox"] {
+      appearance: none;
+      border: 2px solid $dark-gray;
+      height: 24px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 24px;
+
+      &::before {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23FFFFFF" fill-rule="nonzero" d="m10.278 0 1.665 1.108-6.665 10.017L0 7.372l1.159-1.63L4.756 8.3z"/></svg>');
+        background-position: center;
+        background-size: 100%;
+        content: "";
+        display: block;
+        height: 14px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        z-index: 1;
+      }
+
+      &::after {
+        background-color: $dark-gray;
+        content: "";
+        display: block;
+        height: 0;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: height .15s;
+        width: 100%;
+        z-index: 0;
+      }
+
+      &:checked {
+        &::after {
+          height: 100%;
+        }
       }
     }
   }
