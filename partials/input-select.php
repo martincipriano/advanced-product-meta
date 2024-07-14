@@ -1,5 +1,5 @@
 <?php
-  $value = $args['values'][0];
+  $value = $args['values'][0] ?? '';
   $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? $_POST[$args['name']] : $value;
 ?>
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
