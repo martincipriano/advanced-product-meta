@@ -63,15 +63,15 @@ $apm_config = [
     'name' => 'test1',
     'options' => [
       [
-        'value' => '1',
+        'value' => 1,
         'label' => 'Option 1',
       ],
       [
-        'value' => '2',
+        'value' => 2,
         'label' => 'Option 2',
       ],
       [
-        'value' => '3',
+        'value' => 3,
         'label' => 'Option 3',
       ]
     ],
@@ -91,7 +91,8 @@ $apm_config = [
     ],
     'placeholder' => 'Sample Placeholder',
     'required' => false,
-    'type' => 'select'
+    'type' => 'select',
+    'values' => [1]
   ],
   [
     'class' => 'test2',
