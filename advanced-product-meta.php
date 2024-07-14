@@ -140,15 +140,15 @@ $apm_config = [
     'name' => 'test3',
     'options' => [
       [
-        'value' => '1',
+        'value' => 1,
         'label' => 'Option 1',
       ],
       [
-        'value' => '2',
+        'value' => 2,
         'label' => 'Option 2',
       ],
       [
-        'value' => '3',
+        'value' => 3,
         'label' => 'Option 3',
       ]
     ],
@@ -167,7 +167,8 @@ $apm_config = [
       ]
     ],
     'required' => false,
-    'type' => 'checkbox'
+    'type' => 'checkbox',
+    'values' => [ 1, 2, 3]
   ]
 ];
 
