@@ -102,15 +102,15 @@ $apm_config = [
     'name' => 'test2',
     'options' => [
       [
-        'value' => '1',
+        'value' => 1,
         'label' => 'Option 1',
       ],
       [
-        'value' => '2',
+        'value' => 2,
         'label' => 'Option 2',
       ],
       [
-        'value' => '3',
+        'value' => 3,
         'label' => 'Option 3',
       ]
     ],
@@ -129,7 +129,8 @@ $apm_config = [
       ]
     ],
     'required' => true,
-    'type' => 'radio'
+    'type' => 'radio',
+    'values'  => [1]
   ],
   [
     'class' => 'test3',
