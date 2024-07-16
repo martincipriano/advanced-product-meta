@@ -6,12 +6,21 @@
   margin: 0 0 1.5rem;
 }
 #advanced-product-meta .apm-form-group > label {
-  display: block;
+  display: inline-block;
   font-weight: bold;
   margin: 0 0 0.5rem;
+  position: relative;
 }
 #advanced-product-meta .apm-form-group > label + p {
   margin: 0 0 0.5rem;
+}
+#advanced-product-meta .apm-form-group > label .apm-req {
+  color: red;
+  display: inline-block;
+  position: absolute;
+  font-weight: normal;
+  right: -0.75rem;
+  top: -0.25rem;
 }
 #advanced-product-meta .apm-form-group input[type=text],
 #advanced-product-meta .apm-form-group input[type=number],

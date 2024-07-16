@@ -170,7 +170,7 @@ $apm_config = [
     ],
     'required' => false,
     'type' => 'checkbox',
-    'values' => [ 1, 2, 3]
+    'values' => [1, 2, 3]
   ]
 ];
 

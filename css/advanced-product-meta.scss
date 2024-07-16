@@ -12,12 +12,22 @@ $dark-gray:rgb(107 114 128);
     margin: 0 0 1.5rem;
 
     > label {
-      display: block;
+      display: inline-block;
       font-weight: bold;
       margin: 0 0 .5rem;
+      position: relative;
 
       & + p {
         margin: 0 0 .5rem;
+      }
+
+      .apm-req {
+        color: red;
+        display: inline-block;
+        position: absolute;
+        font-weight: normal;
+        right: -.75rem;
+        top: -.25rem;
       }
     }
 

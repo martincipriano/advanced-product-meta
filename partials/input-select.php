@@ -4,7 +4,12 @@
 ?>
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
   <?php if($args['label']): ?>
-    <label for="<?= $args['id'] ?>"><?= $args['label'] ?></label>
+    <label for="<?= $args['id'] ?>">
+      <?= $args['label'] ?>
+      <?php if($args['required']): ?>
+        <span class="apm-req">*</span>
+      <?php endif; ?>
+    </label>
   <?php endif; ?>
   <?php if($args['description']): ?>
     <p class="description"><?= $args['description'] ?></p>
