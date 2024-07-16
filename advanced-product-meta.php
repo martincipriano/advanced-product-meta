@@ -52,7 +52,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'number',
-    'value' => ''
+    'values' => [1]
   ],
   [
     'class' => 'test1',
