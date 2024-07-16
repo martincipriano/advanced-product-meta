@@ -32,7 +32,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'text',
-    'value' => ''
+    'values' => ['']
   ],
   [
     'class' => 'test-number',

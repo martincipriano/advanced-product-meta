@@ -1,3 +1,8 @@
+<?php
+  $value = $args['values'][0] ?? '';
+  $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? $_POST[$args['name']] : $value;
+?>
+
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
   <?php if($args['label']): ?>
@@ -14,7 +19,7 @@
     name="<?= $args['name'] ?>"
     placeholder="<?= $args['placeholder'] ?>"
     type="<?= $args['type'] ?>"
-    value="<?= $_POST[$args['name']] ?? ($args['value'] ?? '') ?>"
+    value="<?= $value ?>"
   >
 
   <?php do_action('after_apm_input', $args) ?>
