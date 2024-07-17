@@ -72,6 +72,20 @@ $apm_config = [
     ],
     'required' => true,
     'step' => 1,
+    'ticks'  => [
+      [
+        'label' => 'Nothing yet',
+        'value' => 0
+      ],
+      [
+        'label' => 'A lil bit more',
+        'value' => 6
+      ],
+      [
+        'label' => 'Ah yes!',
+        'value' => 10
+      ]
+    ],
     'type' => 'range',
     'values' => [0]
   ],
