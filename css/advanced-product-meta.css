@@ -6,21 +6,16 @@
   margin: 0 0 1.5rem;
 }
 #advanced-product-meta .apm-form-group > label {
-  display: inline-block;
+  display: block;
   font-weight: bold;
   margin: 0 0 0.5rem;
-  position: relative;
 }
 #advanced-product-meta .apm-form-group > label + p {
   margin: 0 0 0.5rem;
 }
 #advanced-product-meta .apm-form-group > label .apm-req {
   color: red;
-  display: inline-block;
-  position: absolute;
   font-weight: normal;
-  right: -0.75rem;
-  top: -0.25rem;
 }
 #advanced-product-meta .apm-form-group input[type=text],
 #advanced-product-meta .apm-form-group input[type=number],
@@ -62,6 +57,39 @@
   cursor: pointer;
   margin: 0;
   padding: 0 0 0 0.5rem;
+}
+#advanced-product-meta .apm-form-group input[type=range] {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  height: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+#advanced-product-meta .apm-form-group input[type=range]::before {
+  background: #CCCCCC;
+  content: "";
+  height: 100%;
+  display: block;
+  left: 1rem;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 2rem);
+  z-index: -1;
+}
+#advanced-product-meta .apm-form-group input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  background-color: #FFFFFF;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px solid rgb(107, 114, 128);
+  border-radius: 50%;
+  height: 2rem;
+  margin-top: -0.5rem;
+  width: 2rem;
 }
 #advanced-product-meta .apm-radio {
   align-items: center;

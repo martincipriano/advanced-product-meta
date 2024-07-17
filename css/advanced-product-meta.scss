@@ -12,10 +12,9 @@ $dark-gray:rgb(107 114 128);
     margin: 0 0 1.5rem;
 
     > label {
-      display: inline-block;
+      display: block;
       font-weight: bold;
       margin: 0 0 .5rem;
-      position: relative;
 
       & + p {
         margin: 0 0 .5rem;
@@ -23,11 +22,7 @@ $dark-gray:rgb(107 114 128);
 
       .apm-req {
         color: red;
-        display: inline-block;
-        position: absolute;
         font-weight: normal;
-        right: -.75rem;
-        top: -.25rem;
       }
     }
 
@@ -71,6 +66,56 @@ $dark-gray:rgb(107 114 128);
         padding: 0 0 0 .5rem;
       }
     }
+
+    input[type="range"] {
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      display: block;
+      height: 1rem;
+      margin-top: 1rem;
+      position: relative;
+      width: 100%;
+      &::before {
+        background: #CCCCCC;
+        content: '';
+        height: 100%;
+        display: block;
+        left: 1rem;
+        position: absolute;
+        top: 0;
+        width: calc(100% - 2rem);
+        z-index: -1;
+      }
+      &::-webkit-slider-thumb {
+        appearance: none;
+        background-color: #FFFFFF;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 3px solid $dark-gray;
+        border-radius: 50%;
+        height: 2rem;
+        margin-top: -.5rem;
+        width: 2rem;
+      }
+    }
+
+    // datalist {
+    //   border: 1px dotted #333;
+    //   box-sizing: border-box;
+    //   display: flex;
+    //   // writing-mode: vertical-lr;
+    //   width: 100%;
+    //   position: relative;
+    // }
+
+    // option {
+    //   padding: 0;
+    //   // position: absolute;
+    //   // writing-mode: vertical-lr;
+    // }
+    
   }
 
   .apm-radio {

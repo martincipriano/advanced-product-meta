@@ -52,7 +52,28 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'number',
-    'values' => [1]
+    'values' => [10]
+  ],
+  [
+    'class' => 'test-number',
+    'description' => '',
+    'hidden' => false,
+    'id' => 'test-number',
+    'label' => 'Test Number Field',
+    'max' => '10',
+    'min' => '0',
+    'name' => 'test-number',
+    'placeholder' => 'Sample Placeholder',
+    'price' => [
+      [
+        'value' => 'test',
+        'price' => 10
+      ]
+    ],
+    'required' => true,
+    'step' => 1,
+    'type' => 'range',
+    'values' => [0]
   ],
   [
     'class' => 'test1',

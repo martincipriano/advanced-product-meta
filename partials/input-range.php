@@ -31,7 +31,7 @@
 
   <datalist id="values">
     <option value="0" label="0"></option>
-    <option value="5" label="5"></option>
+    <option value="8" label="8"></option>
     <option value="10" label="10"></option>
   </datalist>
 
