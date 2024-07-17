@@ -35,35 +35,35 @@ $apm_config = [
     'values' => ['']
   ],
   [
-    'class' => 'test-number',
+    'class' => 'apm-number-input',
     'description' => '',
     'hidden' => false,
-    'id' => 'test-number',
+    'id' => 'apm-number-input',
     'label' => 'Test Number Field',
     'max' => '10',
     'min' => '0',
-    'name' => 'test-number',
+    'name' => 'apm-number-input',
     'placeholder' => 'Sample Placeholder',
     'price' => [
       [
-        'value' => 'test',
+        'max' => '10',
+        'min' => '1',
         'price' => 10
       ]
     ],
     'required' => true,
     'type' => 'number',
-    'values' => [10]
+    'values' => [0]
   ],
   [
-    'class' => 'test-number',
+    'class' => 'apm-range-input',
     'description' => '',
     'hidden' => false,
-    'id' => 'test-number',
-    'label' => 'Test Number Field',
-    'max' => '10',
-    'min' => '0',
-    'name' => 'test-number',
-    'placeholder' => 'Sample Placeholder',
+    'id' => 'apm-range-input',
+    'label' => 'Test Range Input',
+    'max' => '100',
+    'min' => '1',
+    'name' => 'apm-range-input',
     'price' => [
       [
         'value' => 'test',
@@ -79,11 +79,11 @@ $apm_config = [
       ],
       [
         'label' => 'A lil bit more',
-        'value' => 6
+        'value' => 60
       ],
       [
         'label' => 'Ah yes!',
-        'value' => 10
+        'value' => 100
       ]
     ],
     'type' => 'range',
