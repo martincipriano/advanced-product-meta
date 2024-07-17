@@ -30,9 +30,16 @@
   >
 
   <datalist id="values">
-    <option value="0" style="left: 0;">0</option>
-    <option value="8" style="left: 80%;">A lil' bit more</option>
-    <option value="10" style="left: 100%;">Ah yes!</option>
+    <?php if($args['ticks']): ?>
+      <?php foreach($args['ticks'] as $tick): ?>
+        <option value="<?= $tick['value'] ?>" style="left: <?= ($tick['value'] / $args['max']) * 100 ?>%;">
+          <?= $tick['label'] ?>
+        </option>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <option value="<?= $args['min'] ?>" style="left: 0;"><?= $args['min'] ?></option>
+      <option value="<?= $args['max'] ?>" style="left: <?= ($args['max'] / $args['max']) * 100 ?>%"><?= $args['max'] ?></option>
+    <?php endif; ?>
   </datalist>
 
   <?php do_action('after_apm_input', $args) ?>
