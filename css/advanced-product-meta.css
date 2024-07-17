@@ -67,6 +67,7 @@
   margin-top: 1rem;
   position: relative;
   width: 100%;
+  z-index: 2;
 }
 #advanced-product-meta .apm-form-group input[type=range]::before {
   background: #CCCCCC;
@@ -90,6 +91,31 @@
   height: 2rem;
   margin-top: -0.5rem;
   width: 2rem;
+}
+#advanced-product-meta .apm-form-group datalist {
+  box-sizing: border-box;
+  display: flex;
+  margin: 1rem 0 0 1rem;
+  padding-bottom: 1rem;
+  width: calc(100% - 2rem);
+  position: relative;
+  z-index: 1;
+}
+#advanced-product-meta .apm-form-group datalist option {
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+#advanced-product-meta .apm-form-group datalist option::before {
+  border-left: 1px solid #CCCCCC;
+  content: "";
+  display: block;
+  height: 2rem;
+  left: 50%;
+  margin-left: 0.5px;
+  top: -2rem;
+  position: absolute;
+  width: 1px;
 }
 #advanced-product-meta .apm-radio {
   align-items: center;

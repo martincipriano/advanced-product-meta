@@ -76,6 +76,8 @@ $dark-gray:rgb(107 114 128);
       margin-top: 1rem;
       position: relative;
       width: 100%;
+      z-index: 2;
+
       &::before {
         background: #CCCCCC;
         content: '';
@@ -101,21 +103,33 @@ $dark-gray:rgb(107 114 128);
       }
     }
 
-    // datalist {
-    //   border: 1px dotted #333;
-    //   box-sizing: border-box;
-    //   display: flex;
-    //   // writing-mode: vertical-lr;
-    //   width: 100%;
-    //   position: relative;
-    // }
+    datalist {
+      box-sizing: border-box;
+      display: flex;
+      margin: 1rem 0 0 1rem;
+      padding-bottom: 1rem;
+      width: calc(100% - 2rem);
+      position: relative;
+      z-index: 1;
 
-    // option {
-    //   padding: 0;
-    //   // position: absolute;
-    //   // writing-mode: vertical-lr;
-    // }
-    
+      option {
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, 0);
+
+        &::before {
+          border-left: 1px solid #CCCCCC;
+          content: '';
+          display: block;
+          height: 2rem;
+          left: 50%;
+          margin-left: .5px;
+          top: -2rem;
+          position: absolute;
+          width: 1px;
+        }
+      }
+    }
   }
 
   .apm-radio {

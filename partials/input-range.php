@@ -30,9 +30,9 @@
   >
 
   <datalist id="values">
-    <option value="0" label="0"></option>
-    <option value="8" label="8"></option>
-    <option value="10" label="10"></option>
+    <option value="0" style="left: 0;">0</option>
+    <option value="8" style="left: 80%;">A lil' bit more</option>
+    <option value="10" style="left: 100%;">Ah yes!</option>
   </datalist>
 
   <?php do_action('after_apm_input', $args) ?>
