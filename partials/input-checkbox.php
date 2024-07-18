@@ -1,4 +1,11 @@
-<div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
+<?php
+  $subtotal = 0;
+  foreach ($args['values'] as $value) {
+    $subtotal += apm_get_price($args['price'], $value);
+  }
+?>
+
+<div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>" data-subtotal="<?= $subtotal ?>">
 
   <?php if($args['label']): ?>
     <label for="<?= $args['id'] ?>">
