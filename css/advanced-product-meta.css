@@ -58,6 +58,36 @@
   margin: 0;
   padding: 0 0 0 0.5rem;
 }
+#advanced-product-meta .apm-form-group .apm-range-value {
+  margin-bottom: 1rem;
+  position: relative;
+}
+#advanced-product-meta .apm-form-group .apm-range-value span {
+  align-items: center;
+  background-color: rgb(107, 114, 128);
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 2rem;
+}
+#advanced-product-meta .apm-form-group .apm-range-value span::before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgb(107, 114, 128);
+  box-sizing: border-box;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 0;
+}
 #advanced-product-meta .apm-form-group input[type=range] {
   appearance: none;
   background: transparent;
@@ -88,6 +118,7 @@
   background-repeat: no-repeat;
   border: 3px solid rgb(107, 114, 128);
   border-radius: 50%;
+  box-sizing: border-box;
   height: 2rem;
   margin-top: -0.5rem;
   width: 2rem;

@@ -19,6 +19,10 @@
 
   <?php do_action('before_apm_input', $args) ?>
 
+  <div class="apm-range-value">
+    <span style="left: <?= ($args['values'][0] / $args['max']) * 100 ?>%; transform: translateX(-<?= ($args['values'][0] / $args['max']) * 100 ?>%);"><?= $value ?></span>
+  </div>
+
   <input
     list="values"
     max="<?= $args['max'] ?>"

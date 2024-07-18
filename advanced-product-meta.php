@@ -61,8 +61,8 @@ $apm_config = [
     'hidden' => false,
     'id' => 'apm-range-input',
     'label' => 'Test Range Input',
-    'max' => '100',
-    'min' => '1',
+    'max' => '10',
+    'min' => '0',
     'name' => 'apm-range-input',
     'price' => [
       [
@@ -74,16 +74,16 @@ $apm_config = [
     'step' => 1,
     'ticks'  => [
       [
-        'label' => 'Nothing yet',
+        'label' => 'Nothing added',
         'value' => 0
       ],
       [
         'label' => 'A lil bit more',
-        'value' => 60
+        'value' => 5
       ],
       [
         'label' => 'Ah yes!',
-        'value' => 100
+        'value' => 10
       ]
     ],
     'type' => 'range',
@@ -169,7 +169,7 @@ $apm_config = [
     'values'  => [1]
   ],
   [
-    'class' => 'test3',
+    'class' => 'character',
     'description' => '',
     'hidden' => false,
     'id' => 'test3',
@@ -177,35 +177,35 @@ $apm_config = [
     'name' => 'test3',
     'options' => [
       [
-        'value' => 1,
-        'label' => 'Option 1',
+        'label' => 'Terran',
+        'value' => 'Terran'
       ],
       [
-        'value' => 2,
-        'label' => 'Option 2',
+        'label' => 'Protoss',
+        'value' => 'Protoss'
       ],
       [
-        'value' => 3,
-        'label' => 'Option 3',
+        'label' => 'Zerg',
+        'value' => 'Zerg'
       ]
     ],
     'price' => [
       [
-        'value' => '1',
-        'price' => 10
+        'value' => 'Terran',
+        'price' => 30
       ],
       [
-        'value' => '2',
-        'price' => 20
+        'value' => 'Protoss',
+        'price' => 30
       ],
       [
-        'value' => '3',
+        'value' => 'Zerg',
         'price' => 30
       ]
     ],
     'required' => false,
     'type' => 'checkbox',
-    'values' => [1, 2, 3]
+    'values' => ['Terran', 'Protoss', 'Zerg']
   ]
 ];
 
