@@ -57,13 +57,13 @@ $apm_config = [
   ],
   [
     'class' => 'apm-range-input',
-    'description' => '',
+    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, culpa quo? Natus ad nobis atque, minus earum repudiandae eius voluptas!',
     'hidden' => false,
-    'id' => 'apm-range-input',
+    'id' => 'apm-range-input-id',
     'label' => 'Test Range Input',
-    'max' => '10',
+    'max' => '100',
     'min' => '0',
-    'name' => 'apm-range-input',
+    'name' => 'apm-range-input-id',
     'price' => [
       [
         'value' => 'test',
@@ -71,7 +71,7 @@ $apm_config = [
       ]
     ],
     'required' => true,
-    'step' => 1,
+    'step' => 10,
     'ticks'  => [
       [
         'label' => 'Nothing added',
@@ -79,15 +79,15 @@ $apm_config = [
       ],
       [
         'label' => 'A lil bit more',
-        'value' => 5
+        'value' => 50
       ],
       [
         'label' => 'Ah yes!',
-        'value' => 10
+        'value' => 100
       ]
     ],
     'type' => 'range',
-    'values' => [0]
+    'values' => [10]
   ],
   [
     'class' => 'test1',

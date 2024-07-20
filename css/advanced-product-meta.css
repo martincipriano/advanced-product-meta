@@ -36,6 +36,12 @@
   color: rgb(156, 163, 175);
   font-size: 1rem;
 }
+#advanced-product-meta .apm-form-group input[type=text]:focus,
+#advanced-product-meta .apm-form-group input[type=number]:focus,
+#advanced-product-meta .apm-form-group select:focus {
+  outline: 1px solid blue;
+  border-radius: 0;
+}
 #advanced-product-meta .apm-form-group input[type=text] option:not(:first-of-type),
 #advanced-product-meta .apm-form-group input[type=number] option:not(:first-of-type),
 #advanced-product-meta .apm-form-group select option:not(:first-of-type) {
@@ -52,30 +58,37 @@
 #advanced-product-meta .apm-form-group input[type=checkbox] {
   cursor: pointer;
 }
+#advanced-product-meta .apm-form-group input[type=radio]:focus,
+#advanced-product-meta .apm-form-group input[type=checkbox]:focus {
+  outline: 1px solid blue;
+}
 #advanced-product-meta .apm-form-group input[type=radio] + label,
 #advanced-product-meta .apm-form-group input[type=checkbox] + label {
   cursor: pointer;
   margin: 0;
   padding: 0 0 0 0.5rem;
 }
-#advanced-product-meta .apm-form-group .apm-range-value {
-  margin-bottom: 1rem;
+#advanced-product-meta .apm-form-group .apm-range-group {
+  padding-bottom: 3rem;
   position: relative;
 }
-#advanced-product-meta .apm-form-group .apm-range-value span {
+#advanced-product-meta .apm-form-group .apm-range-group .apm-range-tooltip {
   align-items: center;
   background-color: rgb(107, 114, 128);
   border: 1px solid rgb(107, 114, 128);
   border-radius: 5px;
   color: white;
+  cursor: pointer;
   display: flex;
   height: 2rem;
   justify-content: center;
   position: relative;
   text-align: center;
+  white-space: nowrap;
   width: 2rem;
+  z-index: 3;
 }
-#advanced-product-meta .apm-form-group .apm-range-value span::before {
+#advanced-product-meta .apm-form-group .apm-range-group .apm-range-tooltip::before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid rgb(107, 114, 128);
@@ -88,56 +101,69 @@
   transform: translate(-50%, 0);
   width: 0;
 }
-#advanced-product-meta .apm-form-group input[type=range] {
+#advanced-product-meta .apm-form-group .apm-range-group .apm-range-trail {
+  background: rgb(156, 163, 175);
+  box-sizing: border-box;
+  bottom: 3rem;
+  height: 1rem;
+  display: block;
+  left: 0;
+  position: absolute;
+  z-index: 3;
+}
+#advanced-product-meta .apm-form-group .apm-range-group input[type=range] {
   appearance: none;
   background: transparent;
   cursor: pointer;
   display: block;
   height: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 0 0;
   position: relative;
   width: 100%;
   z-index: 2;
 }
-#advanced-product-meta .apm-form-group input[type=range]::before {
-  background: #CCCCCC;
-  content: "";
-  height: 100%;
-  display: block;
-  left: 1rem;
-  position: absolute;
-  top: 0;
-  width: calc(100% - 2rem);
-  z-index: -1;
+#advanced-product-meta .apm-form-group .apm-range-group input[type=range]:focus {
+  outline: 1px solid blue;
+  border-radius: 0;
 }
-#advanced-product-meta .apm-form-group input[type=range]::-webkit-slider-thumb {
+#advanced-product-meta .apm-form-group .apm-range-group input[type=range]::-webkit-slider-thumb {
   appearance: none;
   background-color: #FFFFFF;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
   background-position: center;
   background-repeat: no-repeat;
   border: 3px solid rgb(107, 114, 128);
-  border-radius: 50%;
+  border-radius: 0;
   box-sizing: border-box;
   height: 2rem;
   margin-top: -0.5rem;
+  position: relative;
   width: 2rem;
+  z-index: 3;
 }
-#advanced-product-meta .apm-form-group datalist {
+#advanced-product-meta .apm-form-group .apm-range-group input[type=range]::-webkit-slider-runnable-track {
+  background: rgb(229, 231, 235);
+  height: 1rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#advanced-product-meta .apm-form-group .apm-range-group datalist {
   box-sizing: border-box;
   display: flex;
-  margin: 1rem 0 0 1rem;
-  padding-bottom: 1rem;
+  margin: 1.5rem 0 0 1rem;
+  padding-bottom: 1.5rem;
   width: calc(100% - 2rem);
-  position: relative;
+  position: absolute;
   z-index: 1;
 }
-#advanced-product-meta .apm-form-group datalist option {
+#advanced-product-meta .apm-form-group .apm-range-group datalist option {
   position: absolute;
   text-align: center;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
 }
-#advanced-product-meta .apm-form-group datalist option::before {
+#advanced-product-meta .apm-form-group .apm-range-group datalist option::before {
   border-left: 1px solid #CCCCCC;
   content: "";
   display: block;

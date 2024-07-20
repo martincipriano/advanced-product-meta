@@ -44,6 +44,11 @@ $dark-gray:rgb(107 114 128);
         font-size: 1rem;
       }
 
+      &:focus {
+        outline: 1px solid blue;
+        border-radius: 0;
+      }
+
       option:not(:first-of-type) {
         color: $medium-gray;
       }
@@ -60,6 +65,11 @@ $dark-gray:rgb(107 114 128);
     input[type="radio"],
     input[type="checkbox"] {
       cursor: pointer;
+      
+      &:focus {
+        outline: 1px solid blue;
+      }
+
       & + label {
         cursor: pointer;
         margin: 0;
@@ -67,24 +77,26 @@ $dark-gray:rgb(107 114 128);
       }
     }
 
-    .apm-range-value {
-      margin-bottom: 1rem;
+    .apm-range-group {
+      padding-bottom: 3rem;
       position: relative;
 
-      span {
+      .apm-range-tooltip {
         align-items: center;
         background-color: $dark-gray;
         border: 1px solid $dark-gray;
         border-radius: 5px;
         color: white;
+        cursor: pointer;
         display: flex;
         height: 2rem;
         justify-content: center;
         position: relative;
         text-align: center;
+        white-space: nowrap;
         width: 2rem;
+        z-index: 3;
 
-        // Add a pseudo element to create a triangle pointing down
         &::before {
           border-left: 5px solid transparent;
           border-right: 5px solid transparent;
@@ -99,69 +111,85 @@ $dark-gray:rgb(107 114 128);
           width: 0;
         }
       }
-    }
 
-    input[type="range"] {
-      appearance: none;
-      background: transparent;
-      cursor: pointer;
-      display: block;
-      height: 1rem;
-      margin-top: 1rem;
-      position: relative;
-      width: 100%;
-      z-index: 2;
-
-      &::before {
-        background: #CCCCCC;
-        content: '';
-        height: 100%;
-        display: block;
-        left: 1rem;
-        position: absolute;
-        top: 0;
-        width: calc(100% - 2rem);
-        z-index: -1;
-      }
-      &::-webkit-slider-thumb {
-        appearance: none;
-        background-color: #FFFFFF;
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
-        background-position: center;
-        background-repeat: no-repeat;
-        border: 3px solid $dark-gray;
-        border-radius: 50%;
+      .apm-range-trail {
+        background: $medium-gray;
         box-sizing: border-box;
-        height: 2rem;
-        margin-top: -.5rem;
-        width: 2rem;
-      }
-    }
-
-    datalist {
-      box-sizing: border-box;
-      display: flex;
-      margin: 1rem 0 0 1rem;
-      padding-bottom: 1rem;
-      width: calc(100% - 2rem);
-      position: relative;
-      z-index: 1;
-
-      option {
+        bottom: 3rem;
+        height: 1rem;
+        display: block;
+        left: 0;
         position: absolute;
-        text-align: center;
-        transform: translate(-50%, 0);
+        z-index: 3;
+      }
 
-        &::before {
-          border-left: 1px solid #CCCCCC;
-          content: '';
-          display: block;
+      input[type="range"] {
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        display: block;
+        height: 1rem;
+        margin: 1rem 0 0;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+
+        &:focus {
+          outline: 1px solid blue;
+          border-radius: 0;
+        }
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+          background-color: #FFFFFF;
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
+          background-position: center;
+          background-repeat: no-repeat;
+          border: 3px solid $dark-gray;
+          border-radius: 0;
+          box-sizing: border-box;
           height: 2rem;
-          left: 50%;
-          margin-left: 1px;
-          top: -2rem;
+          margin-top: -.5rem;
+          position: relative;
+          width: 2rem;
+          z-index: 3;
+        }
+
+        &::-webkit-slider-runnable-track {
+          background: $light-gray;
+          height: 1rem;
+          left: 0;
           position: absolute;
-          width: 1px;
+          top: 0;
+          width: 100%;
+        }        
+      }
+
+      datalist {
+        box-sizing: border-box;
+        display: flex;
+        margin: 1.5rem 0 0 1rem;
+        padding-bottom: 1.5rem;
+        width: calc(100% - 2rem);
+        position: absolute;
+        z-index: 1;
+
+        option {
+          position: absolute;
+          text-align: center;
+          transform: translateX(-50%);
+
+          &::before {
+            border-left: 1px solid #CCCCCC;
+            content: '';
+            display: block;
+            height: 2rem;
+            left: 50%;
+            margin-left: 1px;
+            top: -2rem;
+            position: absolute;
+            width: 1px;
+          }
         }
       }
     }
