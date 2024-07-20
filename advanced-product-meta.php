@@ -130,43 +130,43 @@ $apm_config = [
     'values' => [1]
   ],
   [
-    'class' => 'test2',
+    'class' => '',
     'description' => '',
     'hidden' => false,
-    'id' => 'test2',
-    'label' => 'Select One',
-    'name' => 'test2',
+    'id' => 'platform',
+    'label' => 'Select your platform',
+    'name' => 'platform',
     'options' => [
       [
         'value' => 1,
-        'label' => 'Option 1',
+        'label' => 'PC',
       ],
       [
         'value' => 2,
-        'label' => 'Option 2',
+        'label' => 'Playstation',
       ],
       [
         'value' => 3,
-        'label' => 'Option 3',
+        'label' => 'Xbox',
       ]
     ],
     'price' => [
       [
         'value' => '1',
-        'price' => 10
+        'price' => 0
       ],
       [
         'value' => '2',
-        'price' => 20
+        'price' => 0
       ],
       [
         'value' => '3',
-        'price' => 30
+        'price' => 0
       ]
     ],
     'required' => true,
     'type' => 'radio',
-    'values'  => [1]
+    'values'  => []
   ],
   [
     'class' => 'character',
@@ -219,6 +219,16 @@ if (!function_exists('apm_enqueue_scripts')) {
       wp_enqueue_style('apm-styles', plugin_dir_url(__FILE__) . 'css/advanced-product-meta.css');
       wp_enqueue_script('apm-scripts', plugin_dir_url(__FILE__) . 'js/advanced-product-meta.js', [], filemtime(plugin_dir_path(__FILE__) . 'js/advanced-product-meta.js'), true);
     }
+  }
+}
+
+if (!function_exists('apm_head_styles')) {
+  add_action('wp_head', 'apm_head_styles');
+  function apm_head_styles() {
+    global $apm_config;
+    if ($apm_config) { ?>
+      
+    <?php }
   }
 }
 
