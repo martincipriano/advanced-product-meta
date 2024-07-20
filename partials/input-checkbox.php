@@ -32,7 +32,14 @@
           type="checkbox"
           value="<?= $option['value'] ?>"
         >
-        <label for="<?= $args['id'] . '-' . $option['value'] ?>"><?= $option['label'] ?> &mdash; <?= wc_price(apm_get_price($args['price'], $option['value'])) ?></label>
+        <label for="<?= $args['id'] . '-' . $option['value'] ?>">
+
+          <?= $option['label'] ?>
+
+          <?php if(apm_get_price($args['price'], $option['value'])): ?>
+            &mdash; <?= wc_price(apm_get_price($args['price'], $option['value'])) ?>
+          <?php endif; ?>
+        </label>
       </div>
     <?php endforeach; ?>
   </div>

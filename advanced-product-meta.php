@@ -153,15 +153,15 @@ $apm_config = [
     'price' => [
       [
         'value' => '1',
-        'price' => 0
+        'price' => 30
       ],
       [
         'value' => '2',
-        'price' => 0
+        'price' => 30
       ],
       [
         'value' => '3',
-        'price' => 0
+        'price' => 30
       ]
     ],
     'required' => true,
