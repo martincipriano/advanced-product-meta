@@ -19,32 +19,31 @@
 
   <?php do_action('before_apm_input', $args) ?>
 
-  <div class="apm-range-value">
-    <span style="left: <?= ($args['values'][0] / $args['max']) * 100 ?>%; transform: translateX(-<?= ($args['values'][0] / $args['max']) * 100 ?>%);"><?= $value ?></span>
+  <div class="apm-range-group">
+    <span class="apm-range-tooltip" style="left: <?= ($args['values'][0] / $args['max']) * 100 ?>%; transform: translateX(-<?= ($args['values'][0] / $args['max']) * 100 ?>%);"><?= $value ?></span>
+    <span class="apm-range-trail" style="width: calc(<?= ($args['values'][0] / $args['max']) * 100 ?>% - <?= 2 * ($args['values'][0] / $args['max']) ?>rem);"></span>
+    <input
+      list="values"
+      max="<?= $args['max'] ?>"
+      min="<?= $args['min'] ?>"
+      name="<?= $args['name'] ?>"
+      step="<?= $args['step'] ?>"
+      type="range"
+      value="<?= $value ?>"
+    >
+    <datalist id="values">
+      <?php if($args['ticks']): ?>
+        <?php foreach($args['ticks'] as $tick): ?>
+          <option value="<?= $tick['value'] ?>" style="left: <?= ($tick['value'] / $args['max']) * 100 ?>%;">
+            <?= $tick['label'] ?>
+          </option>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <option value="<?= $args['min'] ?>" style="left: 0;"><?= $args['min'] ?></option>
+        <option value="<?= $args['max'] ?>" style="left: <?= ($args['max'] / $args['max']) * 100 ?>%"><?= $args['max'] ?></option>
+      <?php endif; ?>
+    </datalist>
   </div>
-
-  <input
-    list="values"
-    max="<?= $args['max'] ?>"
-    min="<?= $args['min'] ?>"
-    name="<?= $args['name'] ?>"
-    step="<?= $args['step'] ?>"
-    type="range"
-    value="<?= $value ?>"
-  >
-
-  <datalist id="values">
-    <?php if($args['ticks']): ?>
-      <?php foreach($args['ticks'] as $tick): ?>
-        <option value="<?= $tick['value'] ?>" style="left: <?= ($tick['value'] / $args['max']) * 100 ?>%;">
-          <?= $tick['label'] ?>
-        </option>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <option value="<?= $args['min'] ?>" style="left: 0;"><?= $args['min'] ?></option>
-      <option value="<?= $args['max'] ?>" style="left: <?= ($args['max'] / $args['max']) * 100 ?>%"><?= $args['max'] ?></option>
-    <?php endif; ?>
-  </datalist>
 
   <?php do_action('after_apm_input', $args) ?>
 </div>
