@@ -1,6 +1,6 @@
 <?php
-  $value = $args['values'][0] ?? '';
-  $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? $_POST[$args['name']] : $value;
+  $value = $args['values'][0];
+  $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? (int) $_POST[$args['name']] : $value;
 ?>
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
@@ -20,8 +20,8 @@
   <?php do_action('before_apm_input', $args) ?>
 
   <div class="apm-range-group">
-    <span class="apm-range-tooltip" style="left: <?= ($args['values'][0] / $args['max']) * 100 ?>%; transform: translateX(-<?= ($args['values'][0] / $args['max']) * 100 ?>%);"><?= $value ?></span>
-    <span class="apm-range-trail" style="width: calc(<?= ($args['values'][0] / $args['max']) * 100 ?>% - <?= 2 * ($args['values'][0] / $args['max']) ?>rem);"></span>
+    <span class="apm-range-tooltip" style="left: <?= ((($value - $args['min']) / ($args['max'] - $args['min'])) * 100) ?>%; transform: translateX(-<?= (2 * ($value / $args['max'])) ?>rem);"><?= $value ?></span>
+    <span class="apm-range-trail" style="width: calc(<?= ((($value - $args['min']) / ($args['max'] - $args['min'])) * 100) ?>% - <?= (2 * ($value / $args['max'])) ?>rem);"></span>
     <input
       list="values"
       max="<?= $args['max'] ?>"

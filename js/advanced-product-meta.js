@@ -12,12 +12,12 @@ window.apm.updateRangeTooltip = function(e) {
   rangeTooltip.style.left = `${(((rangeInput.value - min) / (max - min)) * 100)}%`
 
   // Subtract range thumb offset where 2 is its width in rem
-  // Prevent the range trail from overlapping the range thumb
-  rangeTrail.style.width = `calc(${(((rangeInput.value - min) / (max - min)) * 100)}% - ${(2 * (rangeInput.value / max))}rem)`
-
-  // Subtract range thumb offset where 2 is its width in rem
   // Prevent the tooltip from moving away from the center of the range thumb
   rangeTooltip.style.transform = `translateX(-${(2 * (rangeInput.value / max))}rem)`
+
+  // Subtract range thumb offset where 2 is its width in rem
+  // Prevent the range trail from overlapping the range thumb
+  rangeTrail.style.width = `calc(${(((rangeInput.value - min) / (max - min)) * 100)}% - ${(2 * (rangeInput.value / max))}rem)`
 
   // Update the range label with the input value
   rangeTooltip.innerHTML = rangeInput.value
@@ -27,6 +27,7 @@ window.apm.moveRangeTooltip = function(e) {
   let formGroup = e.target.closest('.apm-form-group')
   let rangeInput = formGroup.querySelector('input[type="range"]')
   let rangeTooltip = formGroup.querySelector('.apm-range-tooltip')
+  let rangeTrail = formGroup.querySelector('.apm-range-trail')
   let max = rangeInput.getAttribute('max')
   let min = rangeInput.getAttribute('min')
 
@@ -41,6 +42,10 @@ window.apm.moveRangeTooltip = function(e) {
 
     // Subtract range thumb offset where 2 is its width in rem
     rangeTooltip.style.transform = `translateX(-${(2 * (rangeInput.value / max))}rem)`
+
+    // Subtract range thumb offset where 2 is its width in rem
+    // Prevent the range trail from overlapping the range thumb
+    rangeTrail.style.width = `calc(${(((rangeInput.value - min) / (max - min)) * 100)}% - ${(2 * (rangeInput.value / max))}rem)`
 
     // Update the range label with the input value
     rangeTooltip.innerHTML = rangeInput.value

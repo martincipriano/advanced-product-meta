@@ -10,7 +10,7 @@ include_once 'helpers.php';
 
 $apm_config = [
   [
-    'class' => 'test',
+    'class' => 'username',
     'condition' => [
       [
         'action' => 'show',
@@ -20,10 +20,10 @@ $apm_config = [
     ],
     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab veritatis commodi possimus eligendi. Quis!',
     'hidden' => true,
-    'id' => 'test',
-    'label' => 'Test Text Field',
-    'name' => 'test',
-    'placeholder' => 'Sample Placeholder',
+    'id' => '',
+    'label' => 'Your Bungie username',
+    'name' => 'userame',
+    'placeholder' => 'Eg. Bungie#1234',
     'price' => [
       [
         'value' => 'test',
@@ -59,11 +59,11 @@ $apm_config = [
     'class' => 'apm-range-input',
     'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, culpa quo? Natus ad nobis atque, minus earum repudiandae eius voluptas!',
     'hidden' => false,
-    'id' => 'apm-range-input-id',
-    'label' => 'Test Range Input',
-    'max' => '100',
-    'min' => '0',
-    'name' => 'apm-range-input-id',
+    'id' => '',
+    'label' => 'Your charcter level',
+    'max' => '99',
+    'min' => '1',
+    'name' => 'level',
     'price' => [
       [
         'value' => 'test',
@@ -71,23 +71,23 @@ $apm_config = [
       ]
     ],
     'required' => true,
-    'step' => 10,
+    'step' => 1,
     'ticks'  => [
       [
-        'label' => 'Nothing added',
+        'label' => 'What a newb!',
         'value' => 0
       ],
       [
-        'label' => 'A lil bit more',
+        'label' => 'You\'re getting there!',
         'value' => 50
       ],
       [
-        'label' => 'Ah yes!',
-        'value' => 100
+        'label' => 'You\'re a pro!',
+        'value' => 99
       ]
     ],
     'type' => 'range',
-    'values' => [10]
+    'values' => [1]
   ],
   [
     'class' => 'test1',
@@ -138,35 +138,35 @@ $apm_config = [
     'name' => 'platform',
     'options' => [
       [
-        'value' => 1,
+        'value' => 'PC',
         'label' => 'PC',
       ],
       [
-        'value' => 2,
+        'value' => 'Playstation',
         'label' => 'Playstation',
       ],
       [
-        'value' => 3,
+        'value' => 'Xbox',
         'label' => 'Xbox',
       ]
     ],
     'price' => [
       [
-        'value' => '1',
+        'value' => 'PC',
         'price' => 30
       ],
       [
-        'value' => '2',
+        'value' => 'Playstation',
         'price' => 30
       ],
       [
-        'value' => '3',
+        'value' => 'Xbox',
         'price' => 30
       ]
     ],
     'required' => true,
     'type' => 'radio',
-    'values'  => []
+    'values'  => ['PC']
   ],
   [
     'class' => 'character',
@@ -205,7 +205,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'checkbox',
-    'values' => ['Warlock', 'Hunter', 'Titan']
+    'values' => []
   ]
 ];
 
