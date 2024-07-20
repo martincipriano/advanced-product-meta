@@ -172,40 +172,40 @@ $apm_config = [
     'class' => 'character',
     'description' => '',
     'hidden' => false,
-    'id' => 'test3',
-    'label' => 'Select One',
-    'name' => 'test3',
+    'id' => 'character',
+    'label' => 'Select your character',
+    'name' => 'character',
     'options' => [
       [
-        'label' => 'Terran',
-        'value' => 'Terran'
+        'label' => 'Warlock',
+        'value' => 'Warlock'
       ],
       [
-        'label' => 'Protoss',
-        'value' => 'Protoss'
+        'label' => 'Hunter',
+        'value' => 'Hunter'
       ],
       [
-        'label' => 'Zerg',
-        'value' => 'Zerg'
+        'label' => 'Titan',
+        'value' => 'Titan'
       ]
     ],
     'price' => [
       [
-        'value' => 'Terran',
+        'value' => 'Warlock',
         'price' => 30
       ],
       [
-        'value' => 'Protoss',
+        'value' => 'Hunter',
         'price' => 30
       ],
       [
-        'value' => 'Zerg',
+        'value' => 'Titan',
         'price' => 30
       ]
     ],
-    'required' => false,
+    'required' => true,
     'type' => 'checkbox',
-    'values' => ['Terran', 'Protoss', 'Zerg']
+    'values' => ['Warlock', 'Hunter', 'Titan']
   ]
 ];
 
