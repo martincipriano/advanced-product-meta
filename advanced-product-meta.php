@@ -204,7 +204,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'checkbox',
-    'values' => []
+    'values' => ['Warlock', 'Hunter']
   ]
 ];
 
