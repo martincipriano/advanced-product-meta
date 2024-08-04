@@ -1,6 +1,12 @@
 <?php
+  // Set the default input value
   $value = $args['values'][0] ?? '';
   $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? $_POST[$args['name']] : $value;
+
+  // Set a fallback ID if none is set
+  if (!isset($args['id']) || (isset($args['id']) && !$args['id'])) {
+    $args['id'] = 'apm-input-' . $args['key'];
+  }
 ?>
 
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
@@ -20,7 +26,7 @@
 
   <?php do_action('before_apm_input', $args) ?>
 
-  <select name="<?= $args['name'] ?>">
+  <select id="<?= $args['id'] ?>" name="<?= $args['name'] ?>">
 
     <?php if ($args['placeholder']): ?>
       <option selected disabled value=""><?= $args['placeholder'] ?></option>

@@ -1,6 +1,11 @@
 <?php
   $value = $args['values'][0] ?? '';
   $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? $_POST[$args['name']] : $value;
+
+  // Set a fallback ID if none is set
+  if (!isset($args['id']) || (isset($args['id']) && !$args['id'])) {
+    $args['id'] = 'apm-input-' . $args['key'];
+  }
 ?>
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
@@ -20,6 +25,7 @@
   <?php do_action('before_apm_input', $args) ?>
 
   <input
+    id="<?= $args['id'] ?>"
     max="<?= $args['max'] ?>"
     min="<?= $args['min'] ?>"
     name="<?= $args['name'] ?>"

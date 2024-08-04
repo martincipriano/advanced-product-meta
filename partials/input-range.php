@@ -1,6 +1,12 @@
 <?php
+  // Set the default input value
   $value = $args['values'][0];
   $value = isset($_POST[$args['name']]) && $_POST[$args['name']] ? (int) $_POST[$args['name']] : $value;
+
+  // Set a fallback ID if none is set
+  if (!isset($args['id']) || (isset($args['id']) && !$args['id'])) {
+    $args['id'] = 'apm-input-' . $args['key'];
+  }
 ?>
 <div class="apm-form-group <?= $args['class'] ?>" id="<?= $args['id'] ?>">
 
@@ -23,7 +29,8 @@
     <span class="apm-range-tooltip" style="left: <?= ((($value - $args['min']) / ($args['max'] - $args['min'])) * 100) ?>%; transform: translateX(-<?= (2 * ($value / $args['max'])) ?>rem);"><?= $value ?></span>
     <span class="apm-range-trail" style="width: calc(<?= ((($value - $args['min']) / ($args['max'] - $args['min'])) * 100) ?>% - <?= (2 * ($value / $args['max'])) ?>rem);"></span>
     <input
-      list="values"
+      id="<?= $args['id'] ?>"
+      list="<?= $args['id'] ?>"
       max="<?= $args['max'] ?>"
       min="<?= $args['min'] ?>"
       name="<?= $args['name'] ?>"
@@ -31,7 +38,7 @@
       type="range"
       value="<?= $value ?>"
     >
-    <datalist id="values">
+    <datalist id="<?= $args['id'] ?>">
       <?php if($args['ticks']): ?>
         <?php foreach($args['ticks'] as $tick): ?>
           <option value="<?= $tick['value'] ?>" style="left: <?= ($tick['value'] / $args['max']) * 100 ?>%;">

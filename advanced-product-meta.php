@@ -93,7 +93,6 @@ $apm_config = [
     'class' => 'test1',
     'description' => '',
     'hidden' => false,
-    'id' => 'test1',
     'label' => 'Test Select Field',
     'name' => 'test1',
     'options' => [
@@ -274,7 +273,12 @@ if (!function_exists('apm_fields')) {
     $html = '';
 
     // Display the input from the configuration
-    foreach($apm_config as $input) {
+    foreach($apm_config as $key => $input) {
+
+      // Add the input key to the input array
+      // The key will be used if an ID is not set for input IDs and label attributes
+      $input['key'] = $key;
+
       $html .= apm_partial('partials/input', $input['type'], $input);
     } ?>
 
