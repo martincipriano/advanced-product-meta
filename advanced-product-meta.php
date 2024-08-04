@@ -32,7 +32,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'text',
-    'values' => ['']
+    'values' => ['test']
   ],
   [
     'class' => 'apm-number-input',
@@ -241,6 +241,8 @@ if (!function_exists('apm_head_styles')) {
 if (!function_exists('apm_price')) {
   add_filter('woocommerce_get_price_html', 'apm_price', 10, 1);
   function apm_price($price) {
+
+    global $apm_config, $post;
 
     // Check if the price string contains the class 'amount'
     preg_match_all('/\b amount\b/', $price, $amount);
