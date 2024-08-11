@@ -272,19 +272,23 @@ if (!function_exists('apm_price')) {
     global $post;
 
     $product = wc_get_product($post->ID);
+    $args = [
+      'price' => $price,
+      'product' => $product
+    ];
 
     // Check if the product is a variable product
     // Also check if it's the price range if it has "-" in the price
     if ($product->is_type('variable')) {
       if ( substr_count($price, '<bdi>') < 2) {
-        $price = apm_partial('partials/price', 'variable', $product);
+        $price = apm_partial('partials/price', 'variable', $args);
       }
     } else {
       // If the product is on sale
       if ($product->is_on_sale()) {
-        $price = apm_partial('partials/price', 'sale', $product);
+        $price = apm_partial('partials/price', 'sale', $args);
       } else {
-        $price = apm_partial('partials/price', 'regular', $product);
+        $price = apm_partial('partials/price', 'regular', $args);
       }
     }
 
