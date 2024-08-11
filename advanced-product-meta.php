@@ -26,13 +26,13 @@ $apm_config = [
     'placeholder' => 'Eg. Bungie#1234',
     'price' => [
       [
-        'value' => 'test',
-        'price' => 10
+        'value' => 'test value',
+        'price' => 100
       ]
     ],
     'required' => true,
     'type' => 'text',
-    'values' => ['test']
+    'values' => ['test value']
   ],
   [
     'class' => 'apm-number-input',
@@ -232,6 +232,34 @@ if (!function_exists('apm_head_styles')) {
 }
 
 /**
+ * Get the total price of the advanced product meta
+ * 
+ * @return int
+ */
+if (!function_exists('apm_get_price')) {
+  function apm_get_price() {
+    global $apm_config;
+  
+    // Set a default subtotal
+    $subtotal = 0;
+  
+    foreach($apm_config as $input) {
+  
+      // Text input
+      if ($input['type'] == 'text') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && $input['values'][0] == $price['value']) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
+    }
+    return $subtotal;
+  }
+}
+
+
+/**
  * Modify the price based on the initial values of the advanced variations
  *
  * @param string $price
@@ -241,19 +269,23 @@ if (!function_exists('apm_head_styles')) {
 if (!function_exists('apm_price')) {
   add_filter('woocommerce_get_price_html', 'apm_price', 10, 1);
   function apm_price($price) {
+    global $post;
 
-    global $apm_config, $post;
+    $product = wc_get_product($post->ID);
 
-    // Check if the price string contains the class 'amount'
-    preg_match_all('/\b amount\b/', $price, $amount);
-
-    // Check if the price string contains a del tag
-    preg_match_all('/\bdel\b/', $price, $discount);
-
-    // If there are two displayed amounts and no del tag, the price is a variation range
-    // Do not modify the price
-    if (count($amount[0]) === 2 && count($discount[0]) === 0) {
-      return $price;
+    // Check if the product is a variable product
+    // Also check if it's the price range if it has "-" in the price
+    if ($product->is_type('variable')) {
+      if ( substr_count($price, '<bdi>') < 2) {
+        $price = apm_partial('partials/price', 'variable', $product);
+      }
+    } else {
+      // If the product is on sale
+      if ($product->is_on_sale()) {
+        $price = apm_partial('partials/price', 'sale', $product);
+      } else {
+        $price = apm_partial('partials/price', 'regular', $product);
+      }
     }
 
     // ! Modify the price based on the initial values of the advanced variations
