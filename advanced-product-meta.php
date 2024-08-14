@@ -40,7 +40,7 @@ $apm_config = [
     'hidden' => false,
     'id' => 'apm-number-input',
     'label' => 'Test Number Field',
-    'max' => '10',
+    'max' => '20',
     'min' => '0',
     'name' => 'apm-number-input',
     'placeholder' => 'Sample Placeholder',
@@ -336,12 +336,7 @@ if (!function_exists('apm_price')) {
     }
 
     if ($product->is_type('simple')) {
-      // If the product is on sale
-      if ($product->is_on_sale()) {
-        $price = apm_partial('partials/price', 'sale', $args);
-      } else {
-        $price = apm_partial('partials/price', 'regular', $args);
-      }
+      $price = apm_partial('partials/price', 'simple', $args);
     }
 
     // ! Modify the price based on the initial values of the advanced variations
