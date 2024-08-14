@@ -27,7 +27,7 @@ $apm_config = [
     'price' => [
       [
         'value' => 'test value',
-        'price' => 100
+        'price' => 90
       ]
     ],
     'required' => true,
@@ -49,11 +49,16 @@ $apm_config = [
         'max' => '10',
         'min' => '1',
         'price' => 10
+      ],
+      [
+        'max' => '20',
+        'min' => '11',
+        'price' => 20
       ]
     ],
     'required' => true,
     'type' => 'number',
-    'values' => [0]
+    'values' => [12]
   ],
   [
     'class' => 'apm-range-input',
@@ -66,8 +71,14 @@ $apm_config = [
     'name' => 'level',
     'price' => [
       [
-        'value' => 'test',
+        'max' => '50',
+        'min' => '1',
         'price' => 10
+      ],
+      [
+        'max' => '99',
+        'min' => '51',
+        'price' => 20
       ]
     ],
     'required' => true,
@@ -87,7 +98,7 @@ $apm_config = [
       ]
     ],
     'type' => 'range',
-    'values' => [1]
+    'values' => [52]
   ],
   [
     'class' => 'test1',
@@ -126,7 +137,7 @@ $apm_config = [
     'placeholder' => 'Sample Placeholder',
     'required' => false,
     'type' => 'select',
-    'values' => [1]
+    'values' => []
   ],
   [
     'class' => '',
@@ -165,7 +176,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'radio',
-    'values'  => ['PC']
+    'values'  => []
   ],
   [
     'class' => 'character',
@@ -204,7 +215,7 @@ $apm_config = [
     ],
     'required' => true,
     'type' => 'checkbox',
-    'values' => ['Warlock', 'Hunter']
+    'values' => ['Warlock']
   ]
 ];
 
@@ -232,20 +243,19 @@ if (!function_exists('apm_head_styles')) {
 }
 
 /**
- * Get the total price of the advanced product meta
- * 
+ * Get the initial total price of the advanced product meta
+ * based on the default values set in the configuration
+ *
  * @return int
  */
 if (!function_exists('apm_get_subtotal')) {
   function apm_get_subtotal() {
     global $apm_config;
-  
-    // Set a default subtotal
+
     $subtotal = 0;
   
     foreach($apm_config as $input) {
-  
-      // Text input
+
       if ($input['type'] == 'text') {
         foreach($input['price'] as $price) {
           if (isset($input['values'][0]) && $input['values'][0] == $price['value']) {
@@ -253,8 +263,47 @@ if (!function_exists('apm_get_subtotal')) {
           }
         }
       }
+
+      if ($input['type'] == 'number') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && $input['values'][0] >= $price['min'] && $input['values'][0] <= $price['max']) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
+
+      if ($input['type'] == 'range') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && $input['values'][0] >= $price['min'] && $input['values'][0] <= $price['max']) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
+
+      if ($input['type'] == 'select') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && $input['values'][0] == $price['value']) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
+
+      if ($input['type'] == 'radio') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && $input['values'][0] == $price['value']) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
+
+      if ($input['type'] == 'checkbox') {
+        foreach($input['price'] as $price) {
+          if (isset($input['values'][0]) && in_array($price['value'], $input['values'])) {
+            $subtotal += $price['price'];
+          }
+        }
+      }
     }
-    return 100;
     return $subtotal;
   }
 }
