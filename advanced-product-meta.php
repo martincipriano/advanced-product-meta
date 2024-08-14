@@ -236,8 +236,8 @@ if (!function_exists('apm_head_styles')) {
  * 
  * @return int
  */
-if (!function_exists('apm_get_price')) {
-  function apm_get_price() {
+if (!function_exists('apm_get_subtotal')) {
+  function apm_get_subtotal() {
     global $apm_config;
   
     // Set a default subtotal
@@ -254,6 +254,7 @@ if (!function_exists('apm_get_price')) {
         }
       }
     }
+    return 100;
     return $subtotal;
   }
 }
@@ -283,7 +284,9 @@ if (!function_exists('apm_price')) {
       if ( substr_count($price, '<bdi>') < 2) {
         $price = apm_partial('partials/price', 'variable', $args);
       }
-    } else {
+    }
+
+    if ($product->is_type('simple')) {
       // If the product is on sale
       if ($product->is_on_sale()) {
         $price = apm_partial('partials/price', 'sale', $args);
