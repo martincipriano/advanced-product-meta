@@ -10,10 +10,15 @@
   $apm_subtotal = apm_get_subtotal();
 ?>
 
-<?php if ($sale_price): ?>
-  <del><?= wc_price($regular_price) ?></del> <ins><?= wc_price($sale_price) ?></ins><br>
-<?php endif; ?>
-
-<span class="apm-price">
-  <?= wc_price($sale_price + $apm_subtotal) ?>
-</span>
+<div class="apm-price">
+  <p>
+    <strong>Initial price:</strong>
+    <?php if ($sale_price): ?>
+      <del><?= wc_price($regular_price) ?></del> <ins><?= wc_price($sale_price) ?></ins>
+    <?php else: ?>
+      <?= wc_price($regular_price) ?>
+    <?php endif; ?>
+  </p>
+  <p><strong>Additional price based on selection:</strong> <span class="apm-price"><?= wc_price($apm_subtotal) ?></span></p>
+  <p><strong>Total:</strong> <span class="apm-price"><?= wc_price($sale_price + $apm_subtotal) ?></span></p>
+</div>
