@@ -27,7 +27,7 @@ $apm_config = [
     'price' => [
       [
         'value' => 'test value',
-        'price' => 90
+        'price' => 100
       ]
     ],
     'required' => true,
@@ -67,7 +67,7 @@ $apm_config = [
     'id' => '',
     'label' => 'Your charcter level',
     'max' => '99',
-    'min' => '1',
+    'min' => '0',
     'name' => 'level',
     'price' => [
       [
@@ -98,7 +98,7 @@ $apm_config = [
       ]
     ],
     'type' => 'range',
-    'values' => [52]
+    'values' => [50]
   ],
   [
     'class' => 'test1',
@@ -319,6 +319,10 @@ if (!function_exists('apm_get_subtotal')) {
 if (!function_exists('apm_price')) {
   add_filter('woocommerce_get_price_html', 'apm_price', 10, 1);
   function apm_price($price) {
+
+    // Check if we are in a product page
+    if (!is_product()) return $price;
+
     global $post;
 
     $product = wc_get_product($post->ID);
@@ -367,7 +371,7 @@ if (!function_exists('apm_fields')) {
       $html .= apm_partial('partials/input', $input['type'], $input);
     } ?>
 
-    <div id="advanced-product-meta">
+    <div class="apm-form">
       <?php
         do_action('before_apm_fields', $apm_config);
 
