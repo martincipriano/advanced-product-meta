@@ -1,25 +1,30 @@
-#advanced-product-meta {
+.apm-price {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.apm-form {
   user-select: none;
 }
-#advanced-product-meta .apm-form-group {
+.apm-form .apm-form-group {
   font-size: 1rem;
   margin: 0 0 1.5rem;
 }
-#advanced-product-meta .apm-form-group > label {
+.apm-form .apm-form-group > label {
   display: block;
   font-weight: bold;
   margin: 0 0 0.5rem;
 }
-#advanced-product-meta .apm-form-group > label + p {
+.apm-form .apm-form-group > label + p {
   margin: 0 0 0.5rem;
 }
-#advanced-product-meta .apm-form-group > label .apm-req {
+.apm-form .apm-form-group > label .apm-req {
   color: red;
   font-weight: normal;
 }
-#advanced-product-meta .apm-form-group input[type=text],
-#advanced-product-meta .apm-form-group input[type=number],
-#advanced-product-meta .apm-form-group select {
+.apm-form .apm-form-group input[type=text],
+.apm-form .apm-form-group input[type=number],
+.apm-form .apm-form-group select {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(107, 114, 128);
   border-radius: 0;
@@ -30,49 +35,49 @@
   padding: 0 1rem;
   width: 100%;
 }
-#advanced-product-meta .apm-form-group input[type=text]::placeholder,
-#advanced-product-meta .apm-form-group input[type=number]::placeholder,
-#advanced-product-meta .apm-form-group select::placeholder {
+.apm-form .apm-form-group input[type=text]::placeholder,
+.apm-form .apm-form-group input[type=number]::placeholder,
+.apm-form .apm-form-group select::placeholder {
   color: rgb(156, 163, 175);
   font-size: 1rem;
 }
-#advanced-product-meta .apm-form-group input[type=text]:focus,
-#advanced-product-meta .apm-form-group input[type=number]:focus,
-#advanced-product-meta .apm-form-group select:focus {
+.apm-form .apm-form-group input[type=text]:focus,
+.apm-form .apm-form-group input[type=number]:focus,
+.apm-form .apm-form-group select:focus {
   outline: 1px solid blue;
   border-radius: 0;
 }
-#advanced-product-meta .apm-form-group input[type=text] option:not(:first-of-type),
-#advanced-product-meta .apm-form-group input[type=number] option:not(:first-of-type),
-#advanced-product-meta .apm-form-group select option:not(:first-of-type) {
+.apm-form .apm-form-group input[type=text] option:not(:first-of-type),
+.apm-form .apm-form-group input[type=number] option:not(:first-of-type),
+.apm-form .apm-form-group select option:not(:first-of-type) {
   color: rgb(156, 163, 175);
 }
-#advanced-product-meta .apm-form-group select {
+.apm-form .apm-form-group select {
   appearance: none;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9"><path fill="%236b7280" fill-rule="nonzero" d="m13.322.265 1.356 1.47L7.5 8.361.322 1.735 1.678.265 7.5 5.639z"/></svg>');
   background-position: right 1rem center;
   background-repeat: no-repeat;
   padding-right: 3rem;
 }
-#advanced-product-meta .apm-form-group input[type=radio],
-#advanced-product-meta .apm-form-group input[type=checkbox] {
+.apm-form .apm-form-group input[type=radio],
+.apm-form .apm-form-group input[type=checkbox] {
   cursor: pointer;
 }
-#advanced-product-meta .apm-form-group input[type=radio]:focus,
-#advanced-product-meta .apm-form-group input[type=checkbox]:focus {
+.apm-form .apm-form-group input[type=radio]:focus,
+.apm-form .apm-form-group input[type=checkbox]:focus {
   outline: 1px solid blue;
 }
-#advanced-product-meta .apm-form-group input[type=radio] + label,
-#advanced-product-meta .apm-form-group input[type=checkbox] + label {
+.apm-form .apm-form-group input[type=radio] + label,
+.apm-form .apm-form-group input[type=checkbox] + label {
   cursor: pointer;
   margin: 0;
   padding: 0 0 0 0.5rem;
 }
-#advanced-product-meta .apm-form-group .apm-range-group {
+.apm-form .apm-form-group .apm-range-group {
   padding-bottom: 3rem;
   position: relative;
 }
-#advanced-product-meta .apm-form-group .apm-range-group .apm-range-tooltip {
+.apm-form .apm-form-group .apm-range-group .apm-range-tooltip {
   align-items: center;
   background-color: rgb(107, 114, 128);
   border: 1px solid rgb(107, 114, 128);
@@ -88,7 +93,7 @@
   width: 2rem;
   z-index: 3;
 }
-#advanced-product-meta .apm-form-group .apm-range-group .apm-range-tooltip::before {
+.apm-form .apm-form-group .apm-range-group .apm-range-tooltip::before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid rgb(107, 114, 128);
@@ -101,7 +106,7 @@
   transform: translate(-50%, 0);
   width: 0;
 }
-#advanced-product-meta .apm-form-group .apm-range-group .apm-range-trail {
+.apm-form .apm-form-group .apm-range-group .apm-range-trail {
   background: rgb(156, 163, 175);
   box-sizing: border-box;
   bottom: 3rem;
@@ -111,7 +116,7 @@
   position: absolute;
   z-index: 3;
 }
-#advanced-product-meta .apm-form-group .apm-range-group input[type=range] {
+.apm-form .apm-form-group .apm-range-group input[type=range] {
   appearance: none;
   background: transparent;
   cursor: pointer;
@@ -122,11 +127,11 @@
   width: 100%;
   z-index: 2;
 }
-#advanced-product-meta .apm-form-group .apm-range-group input[type=range]:focus {
+.apm-form .apm-form-group .apm-range-group input[type=range]:focus {
   outline: 1px solid blue;
   border-radius: 0;
 }
-#advanced-product-meta .apm-form-group .apm-range-group input[type=range]::-webkit-slider-thumb {
+.apm-form .apm-form-group .apm-range-group input[type=range]::-webkit-slider-thumb {
   appearance: none;
   background-color: #FFFFFF;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15"><path fill="%23CCC" fill-rule="evenodd" d="M5 0h2v15H5V0ZM0 2h2v11H0V2Zm10 0h2v11h-2V2Z"/></svg>');
@@ -141,7 +146,7 @@
   width: 2rem;
   z-index: 3;
 }
-#advanced-product-meta .apm-form-group .apm-range-group input[type=range]::-webkit-slider-runnable-track {
+.apm-form .apm-form-group .apm-range-group input[type=range]::-webkit-slider-runnable-track {
   background: rgb(229, 231, 235);
   height: 1rem;
   left: 0;
@@ -149,7 +154,7 @@
   top: 0;
   width: 100%;
 }
-#advanced-product-meta .apm-form-group .apm-range-group datalist {
+.apm-form .apm-form-group .apm-range-group datalist {
   box-sizing: border-box;
   display: flex;
   margin: 1.5rem 0 0 1rem;
@@ -158,12 +163,12 @@
   position: absolute;
   z-index: 1;
 }
-#advanced-product-meta .apm-form-group .apm-range-group datalist option {
+.apm-form .apm-form-group .apm-range-group datalist option {
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
 }
-#advanced-product-meta .apm-form-group .apm-range-group datalist option::before {
+.apm-form .apm-form-group .apm-range-group datalist option::before {
   border-left: 1px solid #CCCCCC;
   content: "";
   display: block;
@@ -174,12 +179,12 @@
   position: absolute;
   width: 1px;
 }
-#advanced-product-meta .apm-radio {
+.apm-form .apm-radio {
   align-items: center;
   display: flex;
   margin-bottom: 1rem;
 }
-#advanced-product-meta .apm-radio input[type=radio] {
+.apm-form .apm-radio input[type=radio] {
   appearance: none;
   border: 2px solid rgb(107, 114, 128);
   border-radius: 20px;
@@ -189,7 +194,7 @@
   position: relative;
   width: 24px;
 }
-#advanced-product-meta .apm-radio input[type=radio]::after {
+.apm-form .apm-radio input[type=radio]::after {
   background-color: rgb(107, 114, 128);
   border-radius: 50%;
   content: "";
@@ -202,15 +207,15 @@
   transition: height 0.15s;
   width: 14px;
 }
-#advanced-product-meta .apm-radio input[type=radio]:checked::after {
+.apm-form .apm-radio input[type=radio]:checked::after {
   height: 14px;
 }
-#advanced-product-meta .apm-checkbox {
+.apm-form .apm-checkbox {
   align-items: center;
   display: flex;
   margin-bottom: 1rem;
 }
-#advanced-product-meta .apm-checkbox input[type=checkbox] {
+.apm-form .apm-checkbox input[type=checkbox] {
   appearance: none;
   border: 2px solid rgb(107, 114, 128);
   height: 24px;
@@ -219,7 +224,7 @@
   position: relative;
   width: 24px;
 }
-#advanced-product-meta .apm-checkbox input[type=checkbox]::before {
+.apm-form .apm-checkbox input[type=checkbox]::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23FFFFFF" fill-rule="nonzero" d="m10.278 0 1.665 1.108-6.665 10.017L0 7.372l1.159-1.63L4.756 8.3z"/></svg>');
   background-position: center;
   background-size: 100%;
@@ -234,7 +239,7 @@
   width: 14px;
   z-index: 1;
 }
-#advanced-product-meta .apm-checkbox input[type=checkbox]::after {
+.apm-form .apm-checkbox input[type=checkbox]::after {
   background-color: rgb(107, 114, 128);
   border: 0;
   content: "";
@@ -248,7 +253,7 @@
   width: 100%;
   z-index: 0;
 }
-#advanced-product-meta .apm-checkbox input[type=checkbox]:checked::after {
+.apm-form .apm-checkbox input[type=checkbox]:checked::after {
   height: 100%;
 }
 
